@@ -1376,3 +1376,31 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 		balloon_alert(user, "you're too weak!")
 		return
 	return ..()
+
+/obj/item/witherblade
+	name = "something"
+	desc = "Something!"
+	icon = 'icons/obj/weapons/sword.dmi'
+	icon_state = "katana"
+	inhand_icon_state = "katana"
+	worn_icon_state = "katana"
+	icon_angle = -45
+	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
+	obj_flags = CONDUCTS_ELECTRICITY
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
+	force = 16
+	throwforce = 10
+	w_class = WEIGHT_CLASS_HUGE
+	hitsound = 'sound/items/weapons/bladeslice.ogg'
+	attack_verb_continuous = list("attacks", "slashes", "slices", "tears", "lacerates", "rips", "dices", "cuts")
+	attack_verb_simple = list("attack", "slash", "slice", "tear", "lacerate", "rip", "dice", "cut")
+	block_chance = 60
+	block_sound = 'sound/items/weapons/parry.ogg'
+	sharpness = SHARP_EDGED
+	max_integrity = 200
+	armor_type = /datum/armor/item_katana
+	armour_penetration = 55
+	resistance_flags = FIRE_PROOF
+	var/list/alt_continuous = list("stabs", "pierces", "impales")
+	var/list/alt_simple = list("stab", "pierce", "impale")
