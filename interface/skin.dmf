@@ -54,7 +54,7 @@ menu "menu"
 		category = "&Help"
 		saved-params = "is-checked"
 	elem  "Use Internet Routing Relay"
-		name = "Internet Routing Relays"
+		name = "Server Select"
 		command = "go2relay"
 		saved-params = "is-checked"
 
