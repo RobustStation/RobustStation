@@ -139,6 +139,8 @@ GLOBAL_LIST_INIT(available_ui_styles, list(
 		plane_master_controllers[controller_instance.name] = controller_instance
 
 	owner.overlay_fullscreen("see_through_darkness", /atom/movable/screen/fullscreen/see_through_darkness)
+	owner.overlay_fullscreen("shadow_plane", /atom/movable/screen/fullscreen/shadow)
+	owner.overlay_fullscreen("shadow_plane", /atom/movable/screen/fullscreen/shadow_plane_master)
 
 	// Register onto the global spacelight appearances
 	// So they can be render targeted by anything in the world

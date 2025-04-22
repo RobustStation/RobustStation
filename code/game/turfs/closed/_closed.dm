@@ -1,3 +1,8 @@
+/obj/overlay/shadow
+	icon = 'icons/turf/overlays.dmi'
+	icon_state = "blackOverlay"
+	plane = FOV_SHADOW_OVERLAY_PLANE
+
 /turf/closed
 	layer = CLOSED_TURF_LAYER
 	plane = WALL_PLANE
@@ -8,6 +13,7 @@
 	init_air = FALSE
 	rad_insulation = RAD_MEDIUM_INSULATION
 	pass_flags_self = PASSCLOSEDTURF
+	overlays = list(/obj/overlay/shadow)
 
 /turf/closed/AfterChange()
 	. = ..()

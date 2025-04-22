@@ -20,7 +20,9 @@
 
 #define TRANSPARENT_FLOOR_PLANE -10
 
-#define FLOOR_PLANE -6
+#define FLOOR_PLANE -7
+
+#define FOV_SHADOW_OVERLAY_PLANE -6
 
 #define WALL_PLANE -5
 #define GAME_PLANE -4
@@ -53,23 +55,26 @@
 /// This plane masks out lighting to create an "emissive" effect, ie for glowing lights in otherwise dark areas.
 #define EMISSIVE_RENDER_PLATE 14
 #define EMISSIVE_RENDER_TARGET "*EMISSIVE_PLANE"
+
+#define FOV_SHADOW_PLANE 15
+
 // Ensures all the render targets that point at the emissive plate layer correctly
 #define EMISSIVE_Z_BELOW_LAYER 1
 #define EMISSIVE_FLOOR_LAYER 2
 #define EMISSIVE_SPACE_LAYER 3
 #define EMISSIVE_WALL_LAYER 4
 
-#define RENDER_PLANE_LIGHTING 15
+#define RENDER_PLANE_LIGHTING 16
 
 /// Masks the lighting plane with turfs, so we never light up the void
 /// Failing that, masks emissives and the overlay lighting plane
-#define LIGHT_MASK_PLANE 16
+#define LIGHT_MASK_PLANE 17
 #define LIGHT_MASK_RENDER_TARGET "*LIGHT_MASK_PLANE"
 
 ///Things that should render ignoring lighting
-#define ABOVE_LIGHTING_PLANE 17
+#define ABOVE_LIGHTING_PLANE 18
 
-#define WEATHER_GLOW_PLANE 18
+#define WEATHER_GLOW_PLANE 19
 
 ///---------------- MISC -----------------------
 

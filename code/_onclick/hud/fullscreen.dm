@@ -198,6 +198,33 @@ INITIALIZE_IMMEDIATE(/atom/movable/screen/fullscreen)
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	show_when_dead = TRUE
 
+/atom/movable/screen/fullscreen/shadow
+	icon = 'icons/hud/shadowCone.dmi'
+	screen_loc = "CENTER-7,CENTER-7"
+	plane = FOV_SHADOW_OVERLAY_PLANE
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	show_when_dead = FALSE
+	render_target = "*fov_shadow_offset"
+
+/atom/movable/screen/fullscreen/shadow_plane_master
+	plane = FOV_SHADOW_PLANE
+	appearance_flags = PLANE_MASTER
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	show_when_dead = FALSE
+	blend_mode = BLEND_OVERLAY
+	filters = list(
+		filter(type="outline", size=2),
+		filter(type="displace", size=1, render_source="*fov_shadow_offset"),
+		filter(type="displace", size=2, render_source="*fov_shadow_offset", flags=FILTER_OVERLAY),
+		filter(type="displace", size=4, render_source="*fov_shadow_offset", flags=FILTER_OVERLAY),
+		filter(type="displace", size=8, render_source="*fov_shadow_offset", flags=FILTER_OVERLAY),
+		filter(type="displace", size=16, render_source="*fov_shadow_offset", flags=FILTER_OVERLAY),
+		filter(type="displace", size=32, render_source="*fov_shadow_offset", flags=FILTER_OVERLAY),
+		filter(type="displace", size=64, render_source="*fov_shadow_offset", flags=FILTER_OVERLAY),
+		filter(type="displace", size=128, render_source="*fov_shadow_offset", flags=FILTER_OVERLAY),
+		filter(type="displace", size=256, render_source="*fov_shadow_offset", flags=FILTER_OVERLAY),
+	)
+
 /atom/movable/screen/fullscreen/color_vision/green
 	color = "#00ff00"
 
