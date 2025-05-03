@@ -54,7 +54,7 @@ menu "menu"
 		category = "&Help"
 		saved-params = "is-checked"
 	elem  "Use Internet Routing Relay"
-		name = "Internet Routing Relays"
+		name = "Server Select"
 		command = "go2relay"
 		saved-params = "is-checked"
 
@@ -69,7 +69,7 @@ window "mainwindow"
 		is-default = true
 		saved-params = "pos;size;is-minimized;is-maximized"
 		statusbar = false
-		icon = 'modular_iris\\master_files\\icons\\ui_icons\\common\\iris_logo_32.png'
+		icon = 'icons\\ui_icons\\logo.png'
 		macro = "default"
 		menu = "menu"
 	elem "split"
