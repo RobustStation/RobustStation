@@ -112,9 +112,9 @@ export function SettingsGeneral(props) {
             ) : (
               <Stack>
                 <Input
-                  width={'100%'}
+                  fluid
                   value={fontFamily}
-                  onChange={(e, value) =>
+                  onBlur={(value) =>
                     dispatch(
                       updateSettings({
                         fontFamily: value,

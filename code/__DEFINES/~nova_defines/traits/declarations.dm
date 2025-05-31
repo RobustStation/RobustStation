@@ -80,6 +80,9 @@
 /// The trait that determines if someone has the oversized quirk.
 #define TRAIT_OVERSIZED "trait_oversized"
 
+/// The trait accompanying the "Heavyset" quirk.
+#define TRAIT_HEAVYSET "trait_heavyset"
+
 /// The trait that determines if someone has the system shock quirk.
 #define TRAIT_SYSTEM_SHOCK "trait_system_shock"
 
@@ -142,11 +145,13 @@
 /// Any model that has extra rest options
 #define TRAIT_RESTING_ALTS "extra_resting_alts"
 
-
 /// If clothing can also be damaged by piercing wound checks, instead of JUST slashes and burns
 #define TRAIT_CLOTHES_DAMAGED_BY_PIERCING "clothing_damaged_by_piercing"
 
 /// If a slimeperson is currently protecting themselves from water
 #define TRAIT_SLIME_HYDROPHOBIA "slime_hydrophobia"
+
+//For the hemophage quirk that allows hemophages to eat/drink normal food/drink.
+#define TRAIT_MASQUERADE_FOOD "masquerade_food"
 
 // END TRAIT DEFINES

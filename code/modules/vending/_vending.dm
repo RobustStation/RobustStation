@@ -878,7 +878,7 @@ GLOBAL_LIST_EMPTY(vending_machines_to_restock)
 						var/burn = (damage_type == BURN ? damage : 0) * 0.5
 						carbon_target.take_bodypart_damage(brute, burn, check_armor = TRUE, wound_bonus = 5) // otherwise, deal it to 2 random limbs (or the same one) which will likely shatter something
 						carbon_target.take_bodypart_damage(brute, burn, check_armor = TRUE, wound_bonus = 5)
-					//carbon_target.AddElement(/datum/element/squish, 80 SECONDS) // NOVA EDIT REMOVAL
+					carbon_target.AddElement(/datum/element/squish, 80 SECONDS)
 				else
 					living_target.apply_damage(adjusted_damage, damage_type, blocked = blocked, forced = TRUE, attack_direction = crush_dir)
 
@@ -1462,6 +1462,7 @@ GLOBAL_LIST_EMPTY(vending_machines_to_restock)
 		vended_item.set_greyscale(colors=greyscale_colors)
 	if(usr.CanReach(src) && usr.put_in_hands(vended_item))
 		to_chat(usr, span_notice("You take [item_record.name] out of the slot."))
+		vended_item.do_pickup_animation(usr, src)
 	else
 		to_chat(usr, span_warning("[capitalize(format_text(item_record.name))] falls onto the floor!"))
 	SSblackbox.record_feedback("nested tally", "vending_machine_usage", 1, list("[type]", "[item_record.product_path]"))
