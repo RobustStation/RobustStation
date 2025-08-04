@@ -1,0 +1,20 @@
+2025-08-01:
+  KnigTheThrasher:
+  - map: fixed snowglobe incinerator
+  NoNameGiven-05:
+  - map: CentCom Armory got updated, new equipment dropped and old removed.
+  Skies-Of-Blue:
+  - balance: AIs can now access the power flow control console
+2025-08-02:
+  KnigTheThrasher:
+  - map: voidraptor morgue tools are now actually morgue tools
+2025-08-03:
+  SynthTwo:
+  - balance: modafinil od unit is now a static 15u
+2025-08-04:
+  NoNameGiven-05:
+  - map: All Station Models Bridges now have Faxes.
+  - rscadd: Nanotrasen R&D has finally declassify Bluespace Storage Module, a bad
+      Energy Shield Module and a Short Range Medbeam Module.
+  - admin: Admin Bluespace Storage Module can hold 30 items instead of 21, more then
+      BoH.

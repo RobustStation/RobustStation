@@ -744,7 +744,7 @@
 /turf/open/floor/iron/half,
 /area/station/service/hydroponics)
 "akq" = (
-/obj/machinery/computer/scan_consolenew{
+/obj/machinery/computer/dna_console{
 	dir = 4
 	},
 /obj/effect/turf_decal/trimline/purple/filled/line,
@@ -4920,6 +4920,8 @@
 /obj/item/hand_labeler{
 	pixel_y = 9
 	},
+/obj/item/storage/photo_album/bar,
+/obj/item/storage/dice,
 /turf/open/floor/wood,
 /area/station/service/bar)
 "bvt" = (
@@ -7049,7 +7051,7 @@
 /turf/open/floor/engine,
 /area/station/science/ordnance/storage)
 "cfa" = (
-/obj/effect/decal/cleanable/blood/xtracks,
+/obj/effect/decal/cleanable/blood/tracks/xeno,
 /obj/machinery/door/window/brigdoor/left/directional/south{
 	name = "Secure Creature Pen";
 	req_access = list("xenobiology")
@@ -13987,7 +13989,7 @@
 /obj/structure/sign/poster/random/directional/east,
 /obj/effect/spawner/random/trash/hobo_squat,
 /obj/effect/decal/cleanable/plastic,
-/obj/effect/decal/cleanable/oil,
+/obj/effect/decal/cleanable/blood/oil,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron/smooth,
@@ -15144,15 +15146,13 @@
 /turf/open/floor/iron/small,
 /area/station/hallway/secondary/exit/departure_lounge)
 "esi" = (
-/obj/structure/table/wood,
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
 	},
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable,
-/obj/item/storage/photo_album/bar,
-/obj/item/storage/dice,
 /obj/machinery/airalarm/directional/south,
+/obj/structure/closet/secure_closet/security/service,
 /turf/open/floor/wood/tile,
 /area/station/service/bar)
 "esu" = (
@@ -15903,12 +15903,6 @@
 /obj/structure/table/reinforced/rglass,
 /turf/open/floor/glass/reinforced,
 /area/station/security/office)
-"eEq" = (
-/obj/effect/turf_decal/trimline/yellow/filled/line{
-	dir = 8
-	},
-/turf/closed/wall/r_wall,
-/area/station/medical/pharmacy)
 "eEr" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -22077,8 +22071,8 @@
 /area/station/medical/medbay/central)
 "guJ" = (
 /obj/structure/table/reinforced,
-/obj/effect/spawner/surgery_tray/full,
 /obj/machinery/status_display/evac/directional/south,
+/obj/effect/spawner/surgery_tray/full/morgue,
 /obj/item/reagent_containers/spray/cleaner,
 /turf/open/floor/iron/dark/smooth_large,
 /area/station/medical/morgue)
@@ -23000,7 +22994,7 @@
 /obj/effect/turf_decal/trimline/purple/filled/line{
 	dir = 8
 	},
-/obj/machinery/computer/scan_consolenew{
+/obj/machinery/computer/dna_console{
 	dir = 4
 	},
 /obj/effect/turf_decal/bot,
@@ -30267,7 +30261,7 @@
 /turf/open/floor/iron/white,
 /area/station/medical/virology)
 "iHX" = (
-/obj/effect/decal/cleanable/oil,
+/obj/effect/decal/cleanable/blood/oil,
 /obj/effect/turf_decal/stripes/corner{
 	dir = 4
 	},
@@ -34033,7 +34027,7 @@
 /area/station/hallway/secondary/command)
 "jIc" = (
 /obj/structure/cable,
-/obj/effect/decal/cleanable/oil,
+/obj/effect/decal/cleanable/blood/oil,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/effect/landmark/blobstart,
@@ -35561,7 +35555,7 @@
 "kgN" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/gibs/limb,
-/obj/effect/decal/cleanable/oil,
+/obj/effect/decal/cleanable/blood/oil,
 /turf/open/floor/iron/smooth,
 /area/station/maintenance/department/electrical)
 "kgR" = (
@@ -40661,22 +40655,10 @@
 /turf/open/floor/engine/plasma,
 /area/station/engineering/atmos)
 "lzR" = (
-/obj/structure/table,
 /obj/effect/turf_decal/trimline/brown/filled/line{
 	dir = 8
 	},
-/obj/item/folder/blue{
-	pixel_x = 5;
-	pixel_y = 4
-	},
-/obj/item/folder/yellow{
-	pixel_x = -6;
-	pixel_y = 4
-	},
-/obj/item/radio/headset/headset_cargo{
-	pixel_x = 3;
-	pixel_y = 3
-	},
+/obj/machinery/computer/bounty,
 /turf/open/floor/iron/smooth_edge{
 	dir = 4
 	},
@@ -44911,7 +44893,7 @@
 /turf/open/floor/wood/large,
 /area/station/security/courtroom)
 "mIH" = (
-/obj/effect/decal/cleanable/blood/xtracks,
+/obj/effect/decal/cleanable/blood/tracks/xeno,
 /turf/open/floor/engine/xenobio,
 /area/station/science/xenobiology)
 "mII" = (
@@ -45755,6 +45737,14 @@
 /obj/effect/turf_decal/box,
 /turf/open/floor/plating/airless,
 /area/space/nearstation)
+"mUj" = (
+/obj/structure/cable,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/effect/landmark/start/bridge_officer,
+/turf/open/floor/carpet/blue,
+/area/station/command/bridge)
 "mUp" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/random/trash/mess,
@@ -46981,7 +46971,7 @@
 	},
 /area/station/security/prison/work)
 "nlj" = (
-/obj/effect/decal/cleanable/xenoblood,
+/obj/effect/decal/cleanable/blood/xeno,
 /turf/open/floor/engine/xenobio,
 /area/station/science/xenobiology)
 "nll" = (
@@ -62977,7 +62967,7 @@
 	id = "Xtestlab";
 	name = "Test Chamber Blast Door"
 	},
-/obj/effect/decal/cleanable/blood/xtracks,
+/obj/effect/decal/cleanable/blood/tracks/xeno,
 /obj/item/toy/toy_xeno,
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
@@ -68638,7 +68628,7 @@
 /area/station/commons/fitness/recreation/entertainment)
 "tcA" = (
 /obj/item/book/bible,
-/obj/structure/altar_of_gods,
+/obj/structure/altar/of_gods,
 /turf/open/floor/carpet/stellar,
 /area/station/service/chapel)
 "tcQ" = (
@@ -69196,6 +69186,19 @@
 /area/station/cargo/lobby)
 "tkn" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/structure/table,
+/obj/item/folder/yellow{
+	pixel_x = -6;
+	pixel_y = 4
+	},
+/obj/item/folder/blue{
+	pixel_x = 5;
+	pixel_y = 4
+	},
+/obj/item/radio/headset/headset_cargo{
+	pixel_x = 3;
+	pixel_y = 3
+	},
 /turf/open/floor/iron/smooth_large,
 /area/station/cargo/office)
 "tkz" = (
@@ -71420,7 +71423,7 @@
 	},
 /area/station/medical/medbay/lobby)
 "tOS" = (
-/obj/effect/decal/cleanable/oil,
+/obj/effect/decal/cleanable/blood/oil,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
@@ -75045,7 +75048,7 @@
 /turf/open/floor/iron/dark,
 /area/station/security/holding_cell)
 "uNE" = (
-/obj/machinery/computer/scan_consolenew{
+/obj/machinery/computer/dna_console{
 	dir = 4
 	},
 /obj/effect/turf_decal/trimline/purple/filled/line,
@@ -79667,7 +79670,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/light_switch/directional/south,
-/obj/effect/decal/cleanable/oil,
+/obj/effect/decal/cleanable/blood/oil,
 /obj/structure/spider/stickyweb,
 /obj/structure/cable,
 /turf/open/floor/iron/smooth,
@@ -119983,7 +119986,7 @@ kgk
 fDn
 rVm
 dPv
-eEq
+ifq
 fWf
 fWf
 fiN
@@ -120400,7 +120403,7 @@ lyY
 wsm
 gIo
 lVi
-pMp
+mUj
 wZR
 qLI
 nIK

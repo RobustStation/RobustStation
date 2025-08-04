@@ -4,7 +4,7 @@
 	icon = FA_ICON_HORSE
 	value = 0 //IRIS EDIT: 4 to 0, no reason to make it cost anything
 	mob_trait = TRAIT_PET_OWNER
-	veteran_only = FALSE
+	nova_stars_only = FALSE // IRIS EDIT - everyone can use
 	gain_text = span_notice("You brought your pet with you to work.")
 	lose_text = span_danger("You feel lonely, as if leaving somebody behind...")
 	medical_record_text = "Patient mentions their fondness for their pet."
@@ -101,6 +101,7 @@ GLOBAL_LIST_INIT(possible_player_pet, list(
 	"Sloth" = /mob/living/basic/sloth,
 	"Snake" = /mob/living/basic/snake,
 	"Spider" = /mob/living/basic/spider/maintenance,
+	"Stoat" = /mob/living/basic/stoat,
 	"Tegu" = /mob/living/basic/lizard/tegu,
 	"Turtle" = /mob/living/basic/turtle,
 	//IRIS EDIT CHANGE BEGIN - RARE_FROG_PET

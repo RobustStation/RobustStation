@@ -931,6 +931,9 @@
 /area/space)
 "fq" = (
 /obj/machinery/camera/autoname/directional/west,
+/obj/machinery/computer/bounty{
+	dir = 4
+	},
 /turf/open/floor/iron,
 /area/station/cargo/storage)
 "fr" = (
@@ -1881,7 +1884,7 @@
 /turf/open/floor/iron,
 /area/station/cargo/storage)
 "DW" = (
-/obj/machinery/computer/scan_consolenew{
+/obj/machinery/computer/dna_console{
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/blue{

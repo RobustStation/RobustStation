@@ -39,7 +39,7 @@
 		/obj/item/clothing/head/collectable/captain = 4,
 	)
 
-	veteran_only = FALSE
+	nova_stars_only = FALSE // IRIS EDIT - everyone can use
 	job_flags = STATION_JOB_FLAGS | JOB_CANNOT_OPEN_SLOTS
 
 /datum/outfit/job/blueshield
@@ -114,7 +114,7 @@
 	var/static/list/selectable_gun_types = list(
 		"Takbok Revolver Set" = /obj/item/storage/toolbox/guncase/nova/pistol/trappiste_small_case/takbok,
 		"Custom Hellfire Laser Rifle" = /obj/item/gun/energy/laser/hellgun/blueshield,
-		"NT20 Submachinegun Gunset" = /obj/item/storage/toolbox/guncase/nova/nt20,
+		"NT20 Submachinegun Gunset" = /obj/item/storage/toolbox/guncase/nova/ntspecial/nt20,
 		"Katyusha Shotgun Gunset" = /obj/item/storage/toolbox/guncase/nova/katyusha,
 	)
 
