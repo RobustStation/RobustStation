@@ -55,6 +55,7 @@
 		"synth_liver",
 		"synth_lungs",
 		"synth_stomach",
+		"synth_charger",
 		"synth_ears",
 		"synth_heart",
 	)
@@ -77,6 +78,7 @@
 /datum/techweb_node/atmos/New()
 	design_ids += list(
 		"vox_gas_filter",
+		"vaporizer",
 	)
 	return ..()
 
@@ -133,6 +135,7 @@
 /datum/techweb_node/consoles/New()
 	design_ids += list(
 		"nif_service_tools",
+		"idcard_guest",
 	)
 	return ..()
 
@@ -334,5 +337,13 @@
 /datum/techweb_node/borg_medical/New()
 	design_ids += list(
 		"borg_upgrade_surgicaltools",
+	)
+	return ..()
+
+/////////////////////////Applied Bluespace /////////////////////////
+
+/datum/techweb_node/applied_bluespace/New()
+	design_ids += list(
+		"plantbag_holding",
 	)
 	return ..()
