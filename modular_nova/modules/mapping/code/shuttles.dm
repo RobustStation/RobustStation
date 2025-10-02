@@ -39,6 +39,12 @@
 /obj/item/circuitboard/computer/blackmarket_burst
 	name = "Burst Control Console (Computer Board)"
 	build_path = /obj/machinery/computer/shuttle/caravan/blackmarket_burst
+
+/obj/item/shuttle_remote/bmd
+	name = "Burst Remote"
+	shuttle_away_id = "whiteship_home"
+	shuttle_home_id = "blackmarket_burst_home"
+
 /*----- End of Black Market Shuttle Code -----*/
 
 /*Interdyne Cargo Shuttle*/
@@ -59,6 +65,12 @@
 /obj/item/circuitboard/computer/interdyne_cargo
 	name = "Interdyne Shuttle Control (Computer Board)"
 	build_path = /obj/machinery/computer/shuttle/interdyne_cargo
+
+/obj/item/shuttle_remote/interdyne
+	name = "Interdyne Cargo Shuttle Remote"
+	shuttle_away_id = "interdyne_cargo_away"
+	shuttle_home_id = "interdyne_cargo_home"
+
 /*Interdyne Cargo Shuttle End*/
 
 /datum/map_template/shuttle/prison_transport
@@ -113,7 +125,7 @@
 	name = "Privateer Slaver"
 	prompt_name = "a privateer slaver"
 	you_are_text = "You're here to capture valuable hostages to sell into slavery."
-	flavour_text = "You're part of a privateer crew that sometimes takes contracts from the illusive Guild, which offers bounties and contracts to independent crews. Raiding colonies of the many less technologically advanced species in the area is much easier than this. You've been told that your mission is to capture as many valuable hostages from the station as possible. Your anonymous employer insists on the importance of humiliating SolFed by snatching those under their protection from right under their noses."
+	flavour_text = "You're part of a privateer crew that sometimes takes contracts from the illusive Guild, which offers bounties and contracts to independent crews. Raiding colonies of the many less technologically advanced species in the area is much easier than this. You've been told that your mission is to capture as many valuable hostages from the station as possible. Your anonymous employer insists on the importance of humiliating SolGov by snatching those under their protection from right under their noses."
 	important_text = ""
 
 /obj/effect/mob_spawn/ghost_role/human/guild/slaver
@@ -213,6 +225,11 @@
 	name = "Tarkon Driver Control Console (Computer Board)"
 	build_path = /obj/machinery/computer/shuttle/tarkon_driver
 
+/obj/item/shuttle_remote/tarkon
+	name = "Tarkon Driver Remote"
+	shuttle_away_id = "whiteship_home"
+	shuttle_home_id = "port_tarkon"
+
 /*----- End of Tarkon Shuttle Code -----*/
 
 /*----- SerenityStation Shuttle Code -----*/
@@ -263,13 +280,13 @@
 	zlink_range = 1
 	move_up_action = /datum/action/innate/camera_multiz_up
 	move_down_action = /datum/action/innate/camera_multiz_down
-	
+
 /obj/item/circuitboard/computer/solfed
 	name = "EAS(I)-6224 Control Console (Computer Board)"
 	build_path = /obj/machinery/computer/shuttle/solfed
 
 /obj/item/gps/computer/space/solfed
-	name = "\improper SolFed GPS transponder"
+	name = "\improper SolGov GPS transponder"
 	icon = 'modular_nova/modules/mapping/icons/machinery/gps_computer_x32.dmi'	//needs its own file for pixel size ;-;
 	gpstag = "*SF - EAS(I)-6224"
 	pixel_y = 0

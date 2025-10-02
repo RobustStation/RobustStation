@@ -1,9 +1,9 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 import { Box, Button, Section } from 'tgui-core/components';
 
 import { useBackend } from '../../backend';
 import { sanitizeText } from '../../sanitize';
-import { CommsConsoleData, ShuttleState } from './types';
+import { type CommsConsoleData, ShuttleState } from './types';
 
 export function PageMessages(props) {
   const { act, data } = useBackend<CommsConsoleData>();
@@ -55,7 +55,8 @@ export function PageMessages(props) {
     const textHtml = {
       __html:
         typeof sanitized === 'object' && sanitized !== null
-          ? sanitized.sanitized
+          ? // biome-ignore lint/complexity/useLiteralKeys: <explanation>
+            sanitized['sanitized']
           : sanitized,
     };
 
