@@ -887,3 +887,11 @@
 	playsound(src, 'sound/mobs/non-humanoids/gorilla/gorilla.ogg', 100, FALSE)
 	spasm_animation(5 SECONDS)
 	qdel(nana)
+
+/obj/item/toy/plush/lizard_plushie
+	name = "toaster plushie"
+	desc = "There's a tag on it saying '1 of 1 copy.' on the back, on the front it says 'to my love, Toaster have a merry christmas, love you xoxo Gapzyn <33'"
+	icon_state = "plushie_toaster"
+	attack_verb_continuous = list("claws", "hisses", "tail slaps")
+	attack_verb_simple = list("claw", "hiss", "tail slap")
+	squeak_override = list('sound/items/plushie_toaster.ogg' = 1)
