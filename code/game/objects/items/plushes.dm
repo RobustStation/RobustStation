@@ -888,7 +888,7 @@
 	spasm_animation(5 SECONDS)
 	qdel(nana)
 
-/obj/item/toy/plush/lizard_plushie
+/obj/item/toy/plush/toaster_plushie
 	name = "toaster plushie"
 	desc = "There's a tag on it saying '1 of 1 copy.' on the back, on the front it says 'to my love, Toaster have a merry christmas, love you xoxo Gapzyn <33'"
 	icon_state = "plushie_toaster"
