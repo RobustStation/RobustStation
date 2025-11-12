@@ -436,3 +436,17 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/sign/poster/official/download, 32)
 	icon_state = "dr_house"
 
 MAPPING_DIRECTIONAL_HELPERS(/obj/structure/sign/poster/official/dr_house, 32)
+
+/obj/structure/sign/poster/official/pride_heart
+	name = "Pride Poster"
+	desc = "A poster reminding all company employees that Nanotrasen cares about your pride."
+	icon_state = "pride_heart"
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/sign/poster/official/pride_heart, 32)
+
+/obj/structure/sign/poster/official/space_cola_ad
+	name = "Space cola advertisement"
+	desc = "A poster advertising the drink Space Cola."
+	icon_state = "space_cola_ad"
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/sign/poster/official/space_cola_ad, 32)
