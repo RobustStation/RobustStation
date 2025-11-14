@@ -13,7 +13,7 @@ import {
   Stack,
 } from 'tgui-core/components';
 
-import { LibraryConsoleData } from '../types';
+import type { LibraryConsoleData } from '../types';
 import { useLibraryContext } from '../useLibraryContext';
 
 export function Upload(props) {
@@ -48,7 +48,8 @@ export function Upload(props) {
   const contentHtml = {
     __html:
       typeof sanitized === 'object' && sanitized !== null
-        ? sanitized.sanitized
+        ? // biome-ignore lint/complexity/useLiteralKeys: <explanation>
+          sanitized['sanitized']
         : sanitized,
   };
 

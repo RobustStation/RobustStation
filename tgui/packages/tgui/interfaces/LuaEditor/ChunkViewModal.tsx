@@ -1,9 +1,9 @@
 import hljs from 'highlight.js/lib/core';
-import { Dispatch, SetStateAction } from 'react';
+import type { Dispatch, SetStateAction } from 'react';
 import { Box, Button, Modal, Section } from 'tgui-core/components';
 
 import { sanitizeText } from '../../sanitize';
-import { LuaEditorModal } from './types';
+import type { LuaEditorModal } from './types';
 
 type ChunkViewModalProps = {
   setModal: Dispatch<SetStateAction<LuaEditorModal>>;
@@ -37,7 +37,8 @@ export const ChunkViewModal = (props: ChunkViewModalProps) => {
           const sanitized = sanitizeText(viewedChunk);
           const code =
             typeof sanitized === 'object' && sanitized !== null
-              ? sanitized.sanitized
+              ? // biome-ignore lint/complexity/useLiteralKeys: <explanation>
+                sanitized['sanitized']
               : sanitized;
           return (
             <Box
