@@ -159,8 +159,8 @@ DEFINE_BITFIELD(smoothing_junction, list(
 #define SMOOTH_GROUP_CARPET_KINARIS_BLACK_PURPLE S_TURF(79)
 #define SMOOTH_GROUP_CARPET_KINARIS_BLACK_WHITETRIM S_TURF(80)
 //NOVA EDIT ADDITION END
-#define SMOOTH_GROUP_CARPET_GRIMEY S_TURF(80) //IRIS EDIT
 
+#define SMOOTH_GROUP_CARPET_GRIMEY S_TURF(80) //IRIS EDIT
 
 #define MAX_S_TURF 80 //Always match this value with the one above it. // NOVA EDIT CHANGE - ORIGINAL: #define MAX_S_TURF 62 //Always match this value with the one above it.
 
@@ -251,6 +251,8 @@ DEFINE_BITFIELD(smoothing_junction, list(
 #define SMOOTH_GROUP_PLATFORMS_STONE S_OBJ(84) ///obj/structure/platform/sandstone & cult
 #define SMOOTH_GROUP_PLATFORMS_PIZZA S_OBJ(85) ///obj/structure/platform/pizza
 #define SMOOTH_GROUP_PLATFORMS_PAPER S_OBJ(86) ///obj/structure/platform/paper
+
+#define SMOOTH_GROUP_BOULDER_PLATFORM S_OBJ(89) ///obj/structure/lattice/catwalk/boulder
 
 /// Performs the work to set smoothing_groups and canSmoothWith.
 /// An inlined function used in both turf/Initialize and atom/Initialize.

@@ -95,7 +95,7 @@
 
 /obj/item/gun/energy/laser/hellgun/blueshield
 	name = "streamlined hellfire laser carbine"
-	icon = 'modular_nova/modules/modular_weapons/icons/obj/energy.dmi'
+	icon = 'modular_nova/modules/aesthetics/guns/icons/energy.dmi'
 	icon_state = "bshg"
 	desc = parent_type::desc + " This one has been tinkered with by Central Command technicians to add blue-tinted furniture and squeeze out a few extra shots before running dry."
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/hellfire/blueshield)
@@ -103,8 +103,8 @@
 /obj/item/choice_beacon/blueshield
 	name = "weaponry beacon"
 	desc = "A single use beacon to deliver a weapon or set of your choice. Please only call this in your office!"
-	icon_state = "bs_becon"
-	inhand_icon_state = "bs_becon"
+	icon_state = "bs_beacon"
+	inhand_icon_state = "bs_beacon"
 	icon = 'modular_nova/modules/modular_items/icons/remote.dmi'
 	lefthand_file = 'modular_nova/modules/modular_items/icons/inhand/mobs/lefthand_remote.dmi'
 	righthand_file = 'modular_nova/modules/modular_items/icons/inhand/mobs/righthand_remote.dmi'
@@ -113,10 +113,14 @@
 
 /obj/item/choice_beacon/blueshield/generate_display_names()
 	var/static/list/selectable_gun_types = list(
-		"Takbok Revolver Set" = /obj/item/storage/toolbox/guncase/nova/pistol/trappiste_small_case/takbok,
+		"Fendér Revolver Set" = /obj/item/storage/toolbox/guncase/nova/pistol/trappiste_small_case/bluvolva,
 		"Custom Hellfire Laser Rifle" = /obj/item/gun/energy/laser/hellgun/blueshield,
 		"NT20 Submachinegun Gunset" = /obj/item/storage/toolbox/guncase/nova/ntspecial/nt20,
 		"Katyusha Shotgun Gunset" = /obj/item/storage/toolbox/guncase/nova/katyusha,
+		// IRIS ADDITION - START
+		"X-02 Energy Revolver" = /obj/item/gun/energy/e_gun/blueshield,
+		"Defender Energy Carbine" = /obj/item/gun/energy/e_gun/stun/blueshield,
+		// IRIS ADDITION - END
 	)
 
 	return selectable_gun_types
