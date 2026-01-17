@@ -204,6 +204,11 @@ GLOBAL_LIST_INIT(available_ui_styles, list(
 /datum/hud/proc/eye_z_changed(atom/eye)
 	SIGNAL_HANDLER
 	update_parallax_pref() // If your eye changes z level, so should your parallax prefs
+	// IRIS EDIT START
+	// ensure any persisted parallax overrides survive HUD rebuilds caused by z-level changes
+	if(GLOB.parallax_manager)
+		GLOB.parallax_manager.reapply_parallax_overrides(mymob)
+	// IRIS EDIT END
 	var/turf/eye_turf = get_turf(eye)
 	if(!eye_turf)
 		return
@@ -356,7 +361,8 @@ GLOBAL_LIST_INIT(available_ui_styles, list(
 				screenmob.client.screen += infodisplay
 			if(always_visible_inventory.len)
 				screenmob.client.screen += always_visible_inventory
-			if(open_containers.len)
+			if(open_containers.len && screenmob == mymob) // Don't show open inventories to ghosts
+				list_clear_nulls(open_containers)
 				screenmob.client.screen += open_containers
 			screenmob.client.screen += toggle_palette
 
@@ -419,6 +425,7 @@ GLOBAL_LIST_INIT(available_ui_styles, list(
 		for(var/M in mymob.observers)
 			show_hud(hud_version, M)
 	else if (viewmob.hud_used)
+		viewmob.hide_other_mob_action_buttons(mymob)
 		viewmob.hud_used.plane_masters_update()
 		viewmob.show_other_mob_action_buttons(mymob)
 
@@ -851,4 +858,4 @@ GLOBAL_LIST_INIT(available_ui_styles, list(
 
 /datum/action_group/listed/refresh_actions()
 	. = ..()
-	owner.palette_actions.refresh_actions() // We effect them, so we gotta refresh em
+	owner?.palette_actions.refresh_actions() // We effect them, so we gotta refresh em

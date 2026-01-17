@@ -111,7 +111,8 @@
 	carbon_parent.verb_whisper = initial(carbon_parent.verb_whisper)
 	carbon_parent.verb_sing = initial(carbon_parent.verb_sing)
 	carbon_parent.verb_yell = initial(carbon_parent.verb_yell)
-	carbon_parent.bubble_icon = initial(carbon_parent.bubble_icon)
+	carbon_parent.bubble_icon = get_parent_bubble_icon(carbon_parent) //IRIS EDIT, originally carbon_parent.bubble_icon = initial(carbon_parent.bubble_icon)
+
 	UnregisterSignal(carbon_parent, list(
 		COMSIG_CARBON_GAIN_ORGAN,
 		COMSIG_MOB_TRY_SPEECH,
@@ -122,6 +123,16 @@
 		COMSIG_MOB_TRY_INVOKE_SPELL,
 	))
 	return TRUE
+
+///IRIS EDIT START
+/// Retrieves the highest priority bubble icon for the parent carbon, if any.
+/// Copy of /datum/component/bubble_icon_override/proc/get_bubble_icon(mob/living/target)
+/datum/component/sign_language/proc/get_parent_bubble_icon(mob/living/carbon/carbon_parent)
+	var/list/holder = list(null)
+	SEND_SIGNAL(carbon_parent, COMSIG_GET_BUBBLE_ICON, holder)
+	var/bubble_icon = holder[1]
+	return bubble_icon || initial(carbon_parent.bubble_icon)
+///IRIS EDIT END
 
 ///Signal proc for [COMSIG_CARBON_GAIN_ORGAN]
 ///Applies the new say mod to any tongues that have appeared!
@@ -310,6 +321,10 @@
 
 /// Send a visible message depending on the tone of the message that the sender is trying to convey to the world.
 /datum/component/sign_language/proc/emote_tone(mob/living/carbon/carbon_parent, emote_tone)
+	if(ishuman(carbon_parent))
+		var/mob/living/carbon/human/human_parent = carbon_parent
+		if(human_parent.is_face_obscured())
+			return // You can't see someone's expression if their face is obscured (or disfigured)
 	switch(emote_tone)
 		if(TONE_INQUISITIVE)
 			carbon_parent.visible_message(span_bold("quirks [carbon_parent.p_their()] brows quizzically."), visible_message_flags = EMOTE_MESSAGE|BLOCK_SELF_HIGHLIGHT_MESSAGE)

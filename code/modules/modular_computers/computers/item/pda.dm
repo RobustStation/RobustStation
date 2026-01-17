@@ -31,6 +31,9 @@
 
 	shell_capacity = SHELL_CAPACITY_SMALL
 	action_slots = ALL
+	sound_vary = TRUE
+	pickup_sound = SFX_GENERIC_DEVICE_PICKUP
+	drop_sound = SFX_GENERIC_DEVICE_DROP
 
 	///The item currently inserted into the PDA, starts with a pen.
 	var/obj/item/inserted_item = /obj/item/pen
@@ -54,6 +57,7 @@
 		/obj/item/flashlight/pen,
 		/obj/item/reagent_containers/hypospray/medipen,
 		/obj/item/cigarette,
+		/obj/item/holosynth_pen //IRIS EDIT ADDITION - Holosynth may live here if they choose
 	)
 
 /obj/item/modular_computer/pda/Initialize(mapload)

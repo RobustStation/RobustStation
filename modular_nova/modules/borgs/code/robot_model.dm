@@ -38,6 +38,7 @@
 		add_verb(cyborg, /mob/living/silicon/robot/proc/robot_lay_down)
 		add_verb(cyborg, /mob/living/silicon/robot/proc/rest_style)
 	else
+		cyborg.robot_rest_style = ROBOT_REST_NORMAL
 		cyborg.set_base_pixel_x(0)
 		remove_verb(cyborg, /mob/living/silicon/robot/proc/robot_lay_down)
 		remove_verb(cyborg, /mob/living/silicon/robot/proc/rest_style)
@@ -211,7 +212,7 @@
 /obj/item/robot_model/cargo
 	name = "Cargo"
 	basic_modules = list(
-		/obj/item/stamp,
+		/obj/item/stamp/granted,
 		/obj/item/stamp/denied,
 		/obj/item/pen/cyborg,
 		/obj/item/clipboard/cyborg,
@@ -254,7 +255,7 @@
 		/obj/item/assembly/flash/cyborg,
 		/obj/item/extinguisher,
 		/obj/item/weldingtool/electric,
-		/obj/item/borg/cyborg_omnitool/engineering,
+		/obj/item/multitool/cyborg,
 		/obj/item/crowbar/cyborg/power,
 		/obj/item/screwdriver/cyborg/power,
 		/obj/item/construction/rcd/borg/syndicate,
@@ -321,6 +322,27 @@
 	var/mob/living/silicon/robot/syndicatejack = loc
 	syndicatejack.scrambledcodes = FALSE // Friends with the AI again
 	return ..()
+
+//marauder subtype
+/obj/item/robot_model/syndicatejack/marauder
+	basic_modules = list(
+		/obj/item/assembly/flash/cyborg,
+		/obj/item/gun/energy/disabler/cyborg,
+		/obj/item/borg/stun,
+		/obj/item/restraints/handcuffs/cable/zipties,
+		/obj/item/melee/energy/sword/cyborg,
+		/obj/item/gun/energy/printer,
+		/obj/item/card/emag,
+		/obj/item/borg_shapeshifter,
+		/obj/item/borg/cyborg_omnitool/medical,
+		/obj/item/borg/cyborg_omnitool/medical,
+		/obj/item/reagent_containers/borghypo/syndicate,
+		/obj/item/shockpaddles/syndicate/cyborg,
+		/obj/item/borg/cyborg_omnitool/engineering,
+		/obj/item/borg/cyborg_omnitool/engineering,
+		/obj/item/construction/rcd/borg/syndicate,
+		/obj/item/extinguisher/mini,
+		)
 
 //NINJA
 /obj/item/robot_model/ninja

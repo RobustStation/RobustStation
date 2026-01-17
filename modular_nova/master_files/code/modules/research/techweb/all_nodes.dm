@@ -90,6 +90,7 @@
 		"anesthetic_machine",
 		"smartdartgun",
 		"cone_of_shame",
+		"defibrillator",
 	)
 	return ..()
 
@@ -228,6 +229,7 @@
 		"c38_haywire",
 		"c38_haywire_mag",
 		"ammobench_niche",
+		"sec_dart_pen",
 	)
 	return ..()
 

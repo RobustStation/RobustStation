@@ -3,8 +3,8 @@
 //Misc mob defines
 
 //Ready states at roundstart for mob/dead/new_player
-#define PLAYER_NOT_READY 0
-#define PLAYER_READY_TO_PLAY 1
+#define PLAYER_NOT_READY "Not Ready"
+#define PLAYER_READY_TO_PLAY "Ready"
 
 //movement intent defines for the move_intent var
 #define MOVE_INTENT_WALK "walk"
@@ -475,7 +475,7 @@
 //MINOR TWEAKS/MISC
 #define AGE_MIN 18 //youngest a character can be
 #define AGE_MAX 100 //oldest a character can be //NOVA EDIT CHANGE - Increase max character age to 100 - ORIGINAL: #define AGE_MAX 85 //oldest a character can be
-#define AGE_CHRONO_MAX 400 //NOVA EDIT ADDITION - Chronological age
+#define AGE_CHRONO_MAX 1000 // IRIS EDIT - Increased from 400 to 1000
 #define AGE_MINOR 18 //legal age of space drinking and smoking //IRIS EDIT
 #define WIZARD_AGE_MIN 30 //youngest a wizard can be
 #define APPRENTICE_AGE_MIN 29 //youngest an apprentice can be
@@ -493,7 +493,7 @@
 #define REM REAGENTS_EFFECT_MULTIPLIER //! Shorthand for the above define for ease of use in equations and the like
 
 // Eye protection
-// THese values are additive to determine your overall flash protection.
+// These values are additive to determine your overall flash protection.
 #define FLASH_PROTECTION_HYPER_SENSITIVE -2
 #define FLASH_PROTECTION_SENSITIVE -1
 #define FLASH_PROTECTION_NONE 0
@@ -501,6 +501,29 @@
 #define FLASH_PROTECTION_WELDER 2
 #define FLASH_PROTECTION_WELDER_SENSITIVE 3
 #define FLASH_PROTECTION_WELDER_HYPER_SENSITIVE 4
+
+/**
+ * Ear protection
+ * These values are additive to determine your overall ear/soundbang protection
+ */
+#define EAR_PROTECTION_NONE 0
+#define EAR_PROTECTION_NORMAL 1
+#define EAR_PROTECTION_HEAVY 2
+#define EAR_PROTECTION_VACUUM 3
+#define EAR_PROTECTION_FULL INFINITY
+
+/**
+ * Soundbang defines
+ * These values are used as argument to determine the strength of the soundbang_act call
+ */
+///Soundbang strength for most things like flashbangs, honkblasts and harm control modules
+#define SOUNDBANG_NORMAL 1
+///Soundbang strength for things like flashbangs in proximity and emagged harm alarm megaphones, cannot be countered by standard ear protection equipment
+#define SOUNDBANG_STRONG 2
+///Soundbang strength for things like changeling shrieks, which can affect robots and aliens as well.
+#define SOUNDBANG_MASSIVE 3
+///Soundbang strength for anything that cannot be stopped unless you're stacked on multiple effects and equipment to counter it (or are simply deaf)
+#define SOUNDBANG_OVERWHELMING 4
 
 // AI Toggles
 #define AI_CAMERA_LUMINOSITY 5
@@ -636,7 +659,7 @@
 #define AI_EMOTION_UNSURE "Unsure"
 #define AI_EMOTION_CONFUSED "Confused"
 #define AI_EMOTION_SAD "Sad"
-#define AI_EMOTION_BSOD "BSOD"
+#define AI_EMOTION_BSOD "BSOD" //It is used only on EMP pulse displays.
 #define AI_EMOTION_BLANK "Blank"
 #define AI_EMOTION_PROBLEMS "Problems?"
 #define AI_EMOTION_AWESOME "Awesome"
@@ -646,6 +669,8 @@
 #define AI_EMOTION_DORFY "Dorfy"
 #define AI_EMOTION_BLUE_GLOW "Blue Glow"
 #define AI_EMOTION_RED_GLOW "Red Glow"
+#define AI_EMOTION_DEAD "Dead" //This one is used when deactivating the AI
+#define AI_EMOTION_DOWNLOAD "Download"
 
 // Defines for AI holograms
 #define AI_HOLOGRAM_CATEGORY_ANIMAL "Animal"
@@ -681,8 +706,8 @@
 #define GET_TARGETS_FROM(who) (who.targets_from ? who.get_targets_from() : who)
 
 //defines for grad_color and grad_styles list access keys
-#define GRADIENT_HAIR_KEY 1
-#define GRADIENT_FACIAL_HAIR_KEY 2
+#define GRADIENT_HAIR_KEY "1"
+#define GRADIENT_FACIAL_HAIR_KEY "2"
 
 // /datum/sprite_accessory/gradient defines
 #define GRADIENT_APPLIES_TO_HAIR (1<<0)
@@ -839,9 +864,12 @@ GLOBAL_LIST_INIT(layers_to_offset, list(
 	"[ID_LAYER]" = UPPER_BODY,
 	"[FACEMASK_LAYER]" = UPPER_BODY,
 	"[LOW_FACEMASK_LAYER]" = UPPER_BODY,
+/*	// IRIS EDIT REMOVAL START - It's okay for these layers to use shared appearences so long as the filters are reset before adding them as overlays
+		this is because adding an appearence to `overlays` copies it
 	// These two are cached, and have their appearance shared(?), so it's safer to just not touch it
 	"[MUTATIONS_LAYER]" = NO_MODIFY,
 	"[FRONT_MUTATIONS_LAYER]" = NO_MODIFY,
+*/ // IRIS EDIT REMOVAL END
 	// These DO get a filter, I'm leaving them here as reference,
 	// to show how many filters are added at a glance
 	// BACK_LAYER (backpacks are big)
@@ -1057,7 +1085,7 @@ GLOBAL_LIST_INIT(layers_to_offset, list(
 #define MINING_MOB_PROJECTILE_VULNERABILITY list(BRUTE)
 
 /// Helper macro that determines if the mob is at the threshold to start vomitting due to high toxin levels
-#define AT_TOXIN_VOMIT_THRESHOLD(mob) (mob.getToxLoss() > 45 && mob.nutrition > 20)
+#define AT_TOXIN_VOMIT_THRESHOLD(mob) (mob.get_tox_loss() > 45 && mob.nutrition > 20)
 
 /// The duration of the flip emote animation
 #define FLIP_EMOTE_DURATION 0.7 SECONDS
