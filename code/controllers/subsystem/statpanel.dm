@@ -75,7 +75,7 @@ SUBSYSTEM_DEF(statpanels)
 			"Server Time: [time2text(world.timeofday, "YYYY-MM-DD hh:mm:ss")]",
 			"Station Time: [time_to_twelve_hour(station_time(), format = "hh:mm")], [timeinworld]", //IRIS EDIT: READABLE STATION TIME
 			"Round Timer: [ROUND_TIME()]",
-			"Actual Round Timer: [time2text(real_round_time, "hh:mm:ss", 0)]"
+			"Actual Round Timer: [time2text(real_round_time, "hh:mm:ss", 0)]",
 			"Discord link: https://discord.gg/EeT3P5mQD4"
 		)
 		// NOVA EDIT ADDITION END
