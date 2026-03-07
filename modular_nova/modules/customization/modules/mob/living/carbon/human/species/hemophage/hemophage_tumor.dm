@@ -6,9 +6,6 @@
 /// By how much the blood drain will be divided when the tumor is in a dormant state.
 #define DORMANT_BLOODLOSS_MULTIPLIER 10
 
-/// Just a conversion factor that ensures there's no weird floating point errors when blood is draining.
-#define FLOATING_POINT_ERROR_AVOIDING_FACTOR 1000
-
 /// Trait gained from the pulsating tumor.
 #define TRAIT_TUMOR "tumor"
 
@@ -63,7 +60,7 @@
 		tumorless_human.remove_movespeed_modifier(/datum/movespeed_modifier/hemophage_dormant_state)
 
 
-/obj/item/organ/heart/hemophage/on_life(seconds_per_tick, times_fired)
+/obj/item/organ/heart/hemophage/on_life(seconds_per_tick)
 	. = ..()
 
 	// A Hemophage's tumor will be able to be operated on multiple times, so
@@ -71,18 +68,36 @@
 	// once.
 	// It's intended that you can't print a tumor, because why would you?
 	operated = FALSE
+	//IRIS EDIT START
+	if(!owner?.client)
+		return
 
+	if(can_heal_owner_damage())
+		owner.apply_status_effect(/datum/status_effect/blood_regen_active)
+
+	else
+		owner.remove_status_effect(/datum/status_effect/blood_regen_active)
+	// IRIS EDIT END
 	if(in_closet(owner)) // No regular bloodloss if you're in a closet
 		return
 
 	if(!owner.has_status_effect(/datum/status_effect/master_of_the_house))
-		owner.blood_volume = (owner.blood_volume * FLOATING_POINT_ERROR_AVOIDING_FACTOR - bloodloss_rate * seconds_per_tick * FLOATING_POINT_ERROR_AVOIDING_FACTOR) / FLOATING_POINT_ERROR_AVOIDING_FACTOR
+		owner.adjust_blood_volume(round(-bloodloss_rate * seconds_per_tick, CHEMICAL_VOLUME_ROUNDING))
 
-	if(owner.blood_volume <= BLOOD_VOLUME_SURVIVE)
+	if(owner.get_blood_volume() <= BLOOD_VOLUME_SURVIVE)
 		to_chat(owner, span_danger("You ran out of blood!"))
 		owner.investigate_log("starved to death from lack of blood caused by [src].", INVESTIGATE_DEATHS)
 		owner.death() // Owch! Ran out of blood.
 
+//IRIS EDIT START
+/// Whether or not we should be applying the healing status effect for the owner.
+/obj/item/organ/heart/hemophage/proc/can_heal_owner_damage()
+	// We handle the least expensive checks first.
+	if(owner.health >= owner.maxHealth || is_dormant || owner.blood_volume <= MINIMUM_VOLUME_FOR_REGEN || (!in_closet(owner)))
+		return FALSE
+
+	return length(owner.get_damaged_bodyparts(TRUE, TRUE, BODYTYPE_ORGANIC)) || (owner.get_tox_loss() && owner.can_adjust_tox_loss())
+//IRIS EDIT END
 
 /obj/item/organ/heart/hemophage/get_status_text(advanced, add_tooltips, colored = TRUE)
 	if(organ_flags & ORGAN_FAILING)
@@ -122,7 +137,6 @@
 /obj/item/organ/heart/hemophage/proc/in_closet(mob/living/carbon/human/hemophage)
 	return istype(hemophage.loc, /obj/structure/closet) && !istype(hemophage.loc, /obj/structure/closet/body_bag)
 
-
 /// Simple helper to toggle the hemophage's vulnerability (or lack thereof) based on the status of their tumor.
 /// This proc contains no check whatsoever, to avoid redundancy of null checks and such.
 /// That being said, it shouldn't be used by anything but the tumor, if you have to call it outside of that, you probably have gone wrong somewhere.
@@ -139,12 +153,10 @@
 /obj/item/organ/heart/hemophage/proc/get_status_tab_item(mob/living/source, list/items)
 	SIGNAL_HANDLER
 
-	items += "Current blood level: [owner.blood_volume]/[BLOOD_VOLUME_MAXIMUM]"
+	items += "Current blood level: [owner.get_blood_volume()]/[BLOOD_VOLUME_MAXIMUM]"
 
 
 #undef MINIMUM_LIGHT_THRESHOLD_FOR_REGEN
-
-#undef FLOATING_POINT_ERROR_AVOIDING_FACTOR
 
 #undef DORMANT_DAMAGE_MULTIPLIER
 #undef DORMANT_BLOODLOSS_MULTIPLIER

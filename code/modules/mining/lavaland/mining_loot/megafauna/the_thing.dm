@@ -125,6 +125,12 @@
 		to_chat(AI, span_warning("You aren't in your core!"))
 		return
 
+	//Iris change
+	if(AI.deployed_shell)
+		to_chat(AI, span_warning("You are already remotely controlling something."))
+		return
+	//Iris end.
+
 	/// NOVA EDIT ADDITION START
 	if(istype(mainframe)) // In case another AI is already inside
 		to_chat(AI, span_warning("Target is currently occupied!"))
@@ -160,7 +166,7 @@
 		implant.radio.command = TRUE
 		implant.radio.channels = AI.radio.channels
 		for(var/channel in implant.radio.channels)
-			implant.radio.secure_radio_connections[channel] = add_radio(implant.radio, GLOB.default_radio_channels[channel])
+			LAZYSET(implant.radio.secure_radio_connections, channel, add_radio(implant.radio, GLOB.default_radio_channels[channel]))
 
 /obj/item/organ/brain/cybernetic/ai/proc/undeploy(datum/source)
 	SIGNAL_HANDLER

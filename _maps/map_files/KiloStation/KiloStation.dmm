@@ -660,11 +660,11 @@
 /obj/structure/table,
 /obj/item/clipboard,
 /obj/item/folder/yellow,
-/obj/item/computer_disk/quartermaster,
-/obj/item/computer_disk/quartermaster,
-/obj/item/computer_disk/quartermaster,
+/obj/item/disk/computer/quartermaster,
+/obj/item/disk/computer/quartermaster,
+/obj/item/disk/computer/quartermaster,
 /obj/item/pen/fountain,
-/obj/item/stamp{
+/obj/item/stamp/granted{
 	pixel_x = 8;
 	pixel_y = 2
 	},
@@ -7271,11 +7271,11 @@
 	pixel_x = 8;
 	pixel_y = 6
 	},
-/obj/item/computer_disk/engineering{
+/obj/item/disk/computer/engineering{
 	pixel_x = 10;
 	pixel_y = -8
 	},
-/obj/item/computer_disk/engineering{
+/obj/item/disk/computer/engineering{
 	pixel_x = 10;
 	pixel_y = -8
 	},
@@ -10563,8 +10563,8 @@
 	pixel_x = -3;
 	pixel_y = -3
 	},
-/obj/item/computer_disk/medical,
-/obj/item/computer_disk/medical,
+/obj/item/disk/computer/medical,
+/obj/item/disk/computer/medical,
 /obj/effect/turf_decal/trimline/blue/filled/line,
 /turf/open/floor/iron/showroomfloor,
 /area/station/command/heads_quarters/cmo)
@@ -10808,10 +10808,17 @@
 /area/station/medical/office)
 "dlc" = (
 /obj/structure/table/reinforced,
-/obj/item/reagent_containers/cup/glass/mug/coco,
+/obj/item/reagent_containers/cup/glass/mug/coco{
+	pixel_x = 7;
+	pixel_y = 0
+	},
 /obj/effect/turf_decal/tile/purple/opposingcorners,
 /obj/effect/turf_decal/tile/purple/anticorner/contrasted{
 	dir = 8
+	},
+/obj/machinery/phone_base/rotary/head_of_staff{
+	pixel_x = -5;
+	pixel_y = 5
 	},
 /turf/open/floor/iron/showroomfloor,
 /area/station/command/heads_quarters/rd)
@@ -10831,6 +10838,11 @@
 	},
 /obj/effect/turf_decal/tile/neutral/half/contrasted{
 	dir = 1
+	},
+/obj/structure/phone_base/captain{
+	pixel_x = -15;
+	dir = 4;
+	pixel_y = 0
 	},
 /turf/open/floor/iron/dark,
 /area/station/command/heads_quarters/captain)
@@ -13531,7 +13543,7 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/effect/turf_decal/siding/purple,
 /obj/machinery/dna_infuser,
-/obj/item/infuser_book,
+/obj/item/tgui_book/manual/infuser,
 /obj/effect/turf_decal/tile/purple/anticorner/contrasted{
 	dir = 8
 	},
@@ -13884,17 +13896,24 @@
 /obj/effect/turf_decal/tile/dark_green/opposingcorners{
 	dir = 1
 	},
-/obj/item/paper_bin{
-	pixel_y = 4
-	},
 /obj/item/stamp/centcom{
-	pixel_y = 8
+	pixel_y = 13;
+	pixel_x = 0
 	},
-/obj/item/stamp{
+/obj/item/stamp/granted{
 	pixel_x = -6
 	},
 /obj/item/stamp/denied{
-	pixel_x = 6
+	pixel_x = 9;
+	pixel_y = 13
+	},
+/obj/machinery/phone_base/rotary/head_of_staff/no_dnd{
+	pixel_x = -6;
+	pixel_y = 1
+	},
+/obj/item/paper_bin{
+	pixel_y = 2;
+	pixel_x = 7
 	},
 /turf/open/floor/stone,
 /area/station/command/heads_quarters/nt_rep)
@@ -20119,6 +20138,9 @@
 /obj/structure/noticeboard/directional/west,
 /turf/open/floor/iron,
 /area/station/service/hydroponics)
+"fVh" = (
+/turf/closed/wall/r_wall/rust,
+/area/station/service/chapel)
 "fVj" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -20759,13 +20781,26 @@
 "ggK" = (
 /obj/structure/cable,
 /obj/structure/table/wood,
-/obj/item/stamp/head/hos,
-/obj/item/stamp/denied{
-	pixel_x = 4;
-	pixel_y = 4
+/obj/item/stamp/head/hos{
+	pixel_x = -10;
+	pixel_y = 13
 	},
-/obj/item/folder/red,
-/obj/item/clipboard,
+/obj/item/stamp/denied{
+	pixel_x = -1;
+	pixel_y = 13
+	},
+/obj/item/clipboard{
+	pixel_x = -10;
+	pixel_y = 0
+	},
+/obj/item/folder/red{
+	pixel_x = -7;
+	pixel_y = 1
+	},
+/obj/machinery/phone_base/rotary/head_of_staff/no_dnd{
+	pixel_x = 6;
+	pixel_y = 1
+	},
 /turf/open/floor/carpet/red,
 /area/station/command/heads_quarters/hos)
 "ggN" = (
@@ -25511,20 +25546,20 @@
 /turf/open/floor/iron/dark,
 /area/station/maintenance/port/fore)
 "hCY" = (
-/obj/item/computer_disk{
+/obj/item/disk/computer{
 	pixel_x = -5;
 	pixel_y = 8
 	},
-/obj/item/computer_disk{
+/obj/item/disk/computer{
 	pixel_x = 7;
 	pixel_y = 2
 	},
-/obj/item/computer_disk{
+/obj/item/disk/computer{
 	pixel_x = -8;
 	pixel_y = -3
 	},
 /obj/structure/table,
-/obj/item/computer_disk/ordnance{
+/obj/item/disk/computer/ordnance{
 	pixel_x = 2;
 	pixel_y = 1
 	},
@@ -32956,8 +32991,8 @@
 /turf/open/floor/plating,
 /area/station/engineering/atmos/storage/gas)
 "jFq" = (
-/obj/structure/barricade/wooden/crude,
 /obj/machinery/door/airlock/bronze,
+/obj/structure/barricade/wooden/crude,
 /turf/open/floor/bronze,
 /area/station/service/chapel)
 "jFQ" = (
@@ -33701,7 +33736,7 @@
 /turf/open/floor/catwalk_floor/iron_dark,
 /area/station/maintenance/port/greater)
 "jQR" = (
-/obj/structure/barricade/wooden,
+/obj/structure/barricade/wooden/crude,
 /obj/effect/spawner/structure/window,
 /turf/open/floor/plating,
 /area/station/service/theater/abandoned)
@@ -37146,7 +37181,7 @@
 /turf/open/floor/iron/dark/textured_corner,
 /area/station/service/chapel/dock)
 "kWW" = (
-/obj/structure/barricade/wooden,
+/obj/structure/barricade/wooden/crude,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/door/airlock/maintenance,
 /obj/effect/mapping_helpers/airlock/abandoned,
@@ -38568,9 +38603,9 @@
 "ltQ" = (
 /obj/structure/table,
 /obj/item/clipboard,
-/obj/item/computer_disk/ordnance,
-/obj/item/computer_disk/ordnance,
-/obj/item/computer_disk/ordnance,
+/obj/item/disk/computer/ordnance,
+/obj/item/disk/computer/ordnance,
+/obj/item/disk/computer/ordnance,
 /obj/item/circuitboard/aicore{
 	pixel_y = 5
 	},
@@ -50970,7 +51005,7 @@
 	pixel_y = 4
 	},
 /obj/item/pen,
-/obj/item/stamp{
+/obj/item/stamp/granted{
 	pixel_x = 8;
 	pixel_y = 2
 	},
@@ -51603,9 +51638,18 @@
 "puN" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table,
-/obj/item/storage/wallet,
-/obj/effect/spawner/random/entertainment/coin,
-/obj/effect/spawner/random/entertainment/coin,
+/obj/item/storage/wallet{
+	pixel_x = 4;
+	pixel_y = -2
+	},
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = 6;
+	pixel_y = -4
+	},
+/obj/effect/spawner/random/entertainment/coin{
+	pixel_x = 6;
+	pixel_y = -4
+	},
 /obj/item/gps{
 	gpstag = "QM0";
 	pixel_x = -8;
@@ -51620,6 +51664,10 @@
 	pixel_y = -10
 	},
 /obj/effect/turf_decal/tile/neutral/anticorner/contrasted,
+/obj/machinery/phone_base/rotary/head_of_staff{
+	pixel_x = 0;
+	pixel_y = 12
+	},
 /turf/open/floor/iron/dark,
 /area/station/command/heads_quarters/qm)
 "pva" = (
@@ -58246,7 +58294,7 @@
 	pixel_x = 8;
 	pixel_y = 6
 	},
-/obj/item/stamp{
+/obj/item/stamp/granted{
 	pixel_x = 8;
 	pixel_y = 2
 	},
@@ -62837,7 +62885,7 @@
 "sLl" = (
 /obj/structure/girder,
 /obj/structure/grille,
-/obj/structure/barricade/wooden,
+/obj/structure/barricade/wooden/crude,
 /turf/open/floor/plating,
 /area/station/maintenance/aft)
 "sLo" = (
@@ -67146,7 +67194,7 @@
 /area/station/maintenance/disposal/incinerator)
 "ubC" = (
 /obj/structure/grille,
-/obj/structure/barricade/wooden,
+/obj/structure/barricade/wooden/crude,
 /obj/machinery/door/airlock/maintenance,
 /obj/effect/mapping_helpers/airlock/abandoned,
 /obj/effect/mapping_helpers/airlock/access/any/security/maintenance,
@@ -76550,8 +76598,6 @@
 /turf/open/floor/iron/dark/herringbone,
 /area/station/security/execution/transfer)
 "wKN" = (
-/obj/structure/barricade/wooden,
-/obj/structure/barricade/wooden/crude,
 /turf/open/floor/iron/stairs/old{
 	dir = 1
 	},
@@ -77602,7 +77648,14 @@
 	},
 /obj/structure/table/glass,
 /obj/effect/turf_decal/trimline/blue/filled/line,
-/obj/item/stamp/head/cmo,
+/obj/item/stamp/head/cmo{
+	pixel_x = -5;
+	pixel_y = 0
+	},
+/obj/machinery/phone_base/rotary/head_of_staff{
+	pixel_x = 7;
+	pixel_y = 1
+	},
 /turf/open/floor/iron/showroomfloor,
 /area/station/command/heads_quarters/cmo)
 "xal" = (
@@ -78082,11 +78135,18 @@
 "xin" = (
 /obj/structure/table,
 /obj/effect/turf_decal/bot,
-/obj/machinery/recharger,
+/obj/machinery/recharger{
+	pixel_x = -5;
+	pixel_y = 0
+	},
 /obj/structure/cable,
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/effect/turf_decal/tile/neutral/half/contrasted{
 	dir = 8
+	},
+/obj/machinery/phone_base/rotary/head_of_staff{
+	pixel_x = 8;
+	pixel_y = 5
 	},
 /turf/open/floor/iron/dark,
 /area/station/command/heads_quarters/ce)
@@ -92526,8 +92586,8 @@ tiv
 siL
 oiO
 oiO
-aeu
-aeu
+fVh
+aaa
 aaa
 aaa
 aaa
@@ -92783,7 +92843,7 @@ jFq
 xqw
 iGx
 oiO
-aeu
+fVh
 aaa
 aaa
 aaa
@@ -93040,7 +93100,7 @@ tiv
 rfg
 vtv
 bJV
-aaa
+fVh
 aaa
 aaa
 aaa
@@ -93297,8 +93357,8 @@ tiv
 jhc
 oiO
 oiO
-aeu
-aeu
+fVh
+aaa
 aaa
 aaa
 aaa
