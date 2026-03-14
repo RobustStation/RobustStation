@@ -843,7 +843,7 @@
 /obj/item/toy/plush/plushie_gapzyn
 	name = "mysterious gay creature plush"
 	desc = "The tag attached says '1 of 1 copy. joyous creature!!!! perfect for cuddling!!!!! very silly!!!!!! will make you very happy!!!!! (ily pook :3:3:3) - toasterpanic'. On the other side of the tag is a heart that's about as straightly-drawn as the creator of the plush."
-	icon_state = "plushie_toaster"
+	icon_state = "plushie_gapzyn"
 	attack_verb_continuous = list("claws", "hisses", "tail slaps")
 	attack_verb_simple = list("claw", "hiss", "tail slap")
 	squeak_override = list('sound/items/tenna-talking.ogg' = 1)
