@@ -949,6 +949,19 @@
 /obj/machinery/firealarm/directional/south,
 /turf/open/floor/iron/dark,
 /area/centcom)
+"dW" = (
+/obj/structure/table/reinforced,
+/obj/item/paper/fluff/opfor_guide,
+/obj/item/paper/fluff/opfor_guide,
+/obj/item/paper/fluff/opfor_guide,
+/obj/item/paper/fluff/opfor_guide,
+/obj/item/paper/fluff/opfor_guide,
+/obj/item/paper/fluff/opfor_guide,
+/obj/item/paper/fluff/opfor_guide,
+/obj/item/paper/fluff/opfor_guide,
+/obj/item/paper/fluff/opfor_guide,
+/turf/open/indestructible/dark,
+/area/centcom)
 "dX" = (
 /obj/item/paper/crumpled/bloody{
 	default_raw_text = "I'm scared.";
@@ -2065,6 +2078,10 @@
 	},
 /turf/open/floor/iron,
 /area/centcom/central_command_areas/prison)
+"iW" = (
+/obj/structure/table/reinforced,
+/turf/open/indestructible/dark,
+/area/centcom)
 "iX" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -2075,6 +2092,21 @@
 	},
 /turf/open/floor/iron,
 /area/centcom/central_command_areas/supply)
+"ja" = (
+/obj/item/chair,
+/obj/item/chair,
+/obj/item/chair,
+/obj/item/chair,
+/obj/item/chair,
+/obj/item/chair,
+/turf/open/indestructible/dark,
+/area/centcom)
+"jd" = (
+/obj/structure/chair{
+	dir = 4
+	},
+/turf/open/indestructible/cobble,
+/area/centcom)
 "je" = (
 /obj/structure/table/reinforced,
 /obj/machinery/microwave,
@@ -2327,6 +2359,10 @@
 	},
 /obj/effect/turf_decal/tile/dark/opposingcorners,
 /turf/open/floor/iron/dark,
+/area/centcom)
+"kr" = (
+/obj/effect/mob_spawn/ghost_role/human/opfor/wizard/academy,
+/turf/open/indestructible/dark,
 /area/centcom)
 "kt" = (
 /obj/effect/turf_decal/tile/dark/opposingcorners,
@@ -3020,6 +3056,10 @@
 	},
 /turf/open/floor/iron/white/textured_large,
 /area/centcom/central_command_areas/control)
+"nW" = (
+/obj/effect/mob_spawn/ghost_role/human/opfor/syndicate,
+/turf/open/indestructible/dark,
+/area/centcom)
 "oc" = (
 /obj/structure/chair,
 /obj/effect/turf_decal/tile/blue/half{
@@ -5025,6 +5065,11 @@
 /obj/machinery/door/firedoor,
 /turf/open/floor/plating,
 /area/centcom/central_command_areas/ferry/hallway)
+"yV" = (
+/obj/machinery/light/directional/east,
+/obj/structure/table/reinforced,
+/turf/open/indestructible/dark,
+/area/centcom)
 "yX" = (
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 4
@@ -6650,6 +6695,9 @@
 	},
 /turf/open/floor/plating,
 /area/centcom/central_command_areas/prison)
+"Fp" = (
+/turf/open/indestructible/dark,
+/area/centcom)
 "Fr" = (
 /obj/structure/window/spawner/directional/south,
 /obj/structure/window/spawner/directional/north,
@@ -7249,6 +7297,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/catwalk_floor,
 /area/centcom/central_command_areas/evacuation/ship)
+"HH" = (
+/obj/effect/mob_spawn/ghost_role/human/opfor/wizard,
+/turf/open/indestructible/dark,
+/area/centcom)
 "HI" = (
 /obj/machinery/recharger{
 	pixel_y = 4
@@ -9344,6 +9396,9 @@
 /obj/structure/flora/bush/flowers_br/style_random,
 /turf/open/floor/grass,
 /area/centcom/central_command_areas/garden)
+"PO" = (
+/turf/open/indestructible,
+/area/centcom)
 "PQ" = (
 /obj/machinery/telecomms/allinone/nuclear,
 /turf/open/indestructible/plating,
@@ -9656,6 +9711,9 @@
 	},
 /turf/open/floor/iron,
 /area/centcom/central_command_areas/supplypod/loading/ert)
+"Rn" = (
+/turf/open/indestructible/cobble,
+/area/centcom)
 "Rp" = (
 /obj/machinery/computer/communications,
 /turf/open/floor/iron/dark/herringbone,
@@ -10807,6 +10865,10 @@
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/iron,
 /area/centcom/central_command_areas/armory)
+"Wd" = (
+/obj/effect/mob_spawn/ghost_role/human/opfor,
+/turf/open/indestructible/dark,
+/area/centcom)
 "Wg" = (
 /obj/effect/turf_decal/tile/dark/opposingcorners,
 /obj/structure/sign/departments/security/directional/north,
@@ -11105,6 +11167,10 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron/dark,
 /area/centcom/central_command_areas/evacuation/ship)
+"Xl" = (
+/obj/effect/mob_spawn/ghost_role/human/opfor/assistant,
+/turf/open/indestructible/dark,
+/area/centcom)
 "Xm" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -62121,17 +62187,17 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+vz
+vz
+vz
+vz
+vz
+vz
+vz
+vz
+vz
+vz
+vz
 aa
 aa
 aa
@@ -62378,17 +62444,17 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+vz
+Fp
+Fp
+Wd
+Xl
+nW
+HH
+kr
+Fp
+Fp
+vz
 aa
 aa
 aa
@@ -62635,17 +62701,17 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+vz
+Fp
+Rn
+Rn
+Rn
+Rn
+Rn
+Rn
+Rn
+Fp
+vz
 aa
 aa
 aa
@@ -62892,17 +62958,17 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+vz
+Fp
+Rn
+PO
+PO
+PO
+PO
+PO
+Rn
+Fp
+vz
 aa
 aa
 aa
@@ -63149,17 +63215,17 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+vz
+Fp
+Rn
+PO
+PO
+PO
+PO
+PO
+Rn
+Fp
+vz
 aa
 aa
 aa
@@ -63406,17 +63472,17 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+vz
+Fp
+Rn
+PO
+PO
+PO
+PO
+PO
+Rn
+Fp
+vz
 aa
 aa
 aa
@@ -63663,17 +63729,17 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+vz
+ja
+Rn
+PO
+PO
+PO
+PO
+PO
+Rn
+Fp
+vz
 aa
 aa
 aa
@@ -63920,17 +63986,17 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+vz
+Fp
+Rn
+PO
+PO
+PO
+PO
+PO
+Rn
+Fp
+vz
 aa
 aa
 aa
@@ -64177,17 +64243,17 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+vz
+Fp
+Rn
+Rn
+jd
+jd
+jd
+Rn
+Rn
+Fp
+vz
 aa
 aa
 aa
@@ -64434,17 +64500,17 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+vz
+Fp
+iW
+yV
+iW
+dW
+iW
+yV
+iW
+Fp
+vz
 aa
 aa
 aa
@@ -64691,17 +64757,17 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+vz
+vz
+vz
+vz
+vz
+vz
+vz
+vz
+vz
+vz
+vz
 aa
 aa
 aa
