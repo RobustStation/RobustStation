@@ -7,7 +7,7 @@
 	desc = "The tape with some signs of date. Probably used by some aspiring wave listener."
 
 	used_capacity = 240
-	storedinfo = list(
+	storedinfo = alist(
 		1 = "<span class='game say'><span class='name'>The universal recorder</span> <span class='message'>says, \"<span class='tape_recorder '>Recording started.</span>\"</span></span>",
 		2 = "<span class='game say'><span class='name'>EAS Announcer</span> <span class='message'>blares, \"<span class=' '>The following message is transmitted at the request of local authorities.</span>\"</span></span>",
 		3 = "<span class='game say'><span class='name'>EAS Announcer</span> <span class='message'>states, \"<span class=' '>At 9:47 AM, Mountain Time, a disaster of unknown type has occurred at the Black Mesa Research Facility causing significant damage and failure to various power and communication systems in the surrounding areas.</span>\"</span></span>",
