@@ -9886,4 +9886,7 @@
 #include "modular_nova\modules\xenoarchartifacts\obj\wave_scanner.dm"
 #include "modular_robust\code\modules\horrorstation ports\horror_mobs.dm"
 #include "modular_robust\code\modules\species\shadowpeople.dm"
+#include "modular_robust\code\modules\spell\conjure advanced\_conjure_advanced.dm"
+#include "modular_robust\code\modules\spell\subdue\_subdue.dm"
+#include "modular_robust\code\modules\spell\subdue\necromancy.dm"
 // END_INCLUDE
