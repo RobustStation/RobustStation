@@ -23,27 +23,6 @@
 
 	return FALSE
 
-/*
-/mob/living/simple_animal/hostile/horrormob/proc/can_be_seen(turf/destination)
-	// Check for darkness
-	var/turf/T = get_turf(loc)
-	if(T && destination && T.lighting_object)
-		if(T.get_lumcount()<0.1 && destination.get_lumcount()<0.1) // No one can see us in the darkness, right?
-			return null
-		if(T == destination)
-			destination = null
-	var/list/check_list = list(src)
-	if(destination)
-		check_list += destination
-	for(var/atom/check in check_list)
-		for(var/mob/living/M in viewers(getexpandedview(world.view, 1, 1), check))
-			if(M != src && M.client && CanAttack(M) && !M.has_unlimited_silicon_privilege && !M.eye_blind)
-				return M
-		for(var/obj/mecha/M in view(getexpandedview(world.view, 1, 1), check)) //assuming if you can see them they can see you
-			if(M.occupant?.client && !M.occupant.eye_blind)
-				return M.occupant
-	return null
-*/
 
 /mob/living/simple_animal/hostile/horrormob/FindHidden()
 	return 0 // So most horror mobs don't search for people in lockers
@@ -70,6 +49,7 @@
 	speed = 10
 	move_to_delay = 1
 	pixel_x = -32
+	base_pixel_x = -32
 	del_on_death = TRUE
 	death_message = "disintegrates."
 	death_sound = 'sound/effects/fuse.ogg'
@@ -87,7 +67,7 @@
 	src.icon_state = "blink_disappearing"
 	src.icon_living = "blink_disappearing"
 	sleep(6)
-	var/turf/safe_turf = find_safe_turf(zlevels = src.z, extended_safety_checks = TRUE)
+	var/turf/safe_turf = find_safe_turf(z, extended_safety_checks = FALSE)
 	do_teleport(src,safe_turf,channel = TELEPORT_CHANNEL_MAGIC)
 	sleep(4)
 	src.icon_state = "blink"
@@ -141,13 +121,14 @@
 	melee_damage_lower = 10
 	melee_damage_upper = 10
 //	vision_range = 20
-	maxHealth = 50
-	health = 50
+	maxHealth = 250
+	health = 250
 	maximum_survivable_temperature = 1200 // so they can be killed with localised plasmafires, but incendiary weapons are not effective
 
-/mob/living/simple_animal/hostile/statue/eyes/AttackingTarget()
-	. = ..()
 
+// /mob/living/basic/statue/eyes/AttackingTarget()
+/mob/living/basic/statue/eyes/melee_attack(atom/target, list/modifiers, ignore_cooldown = FALSE)
+	. = ..()
 /* // I guess this part is now handled by the element that prevents them from moving
 	if(target == /turf/closed/wall)
 		return FALSE
@@ -163,16 +144,11 @@
 		C.adjust_stamina_loss(40)
 		C.adjust_oxy_loss(30)
 		C.adjust_temp_blindness(2 SECONDS)
-//		C.blind_eyes(1)
-		var/turf/safe_turf = find_safe_turf(zlevels = src.z, extended_safety_checks = TRUE)
+		var/turf/safe_turf = find_safe_turf(z, extended_safety_checks = TRUE)
 		do_teleport(target,safe_turf,channel = TELEPORT_CHANNEL_MAGIC)
 		return ..()
 
-
-
-
 // there was supposed to be an invisible horrormob who takes photos of you but i couldn't code that back then either
-
 
 //=-=-=-=-=-
 //NEW MOBS
@@ -185,7 +161,7 @@
 	maxHealth = 80
 	attack_verb_continuous = "bites"
 	attack_verb_simple = "bite"
-	attack_sound = 'sound/mobs/non-humanoids/fish/fish_slap1.ogg'
+	attack_sound = 'sound/items/weapons/rapierhit.ogg'
 	icon_state = "locker_hermit"
 	icon_living = "locker_hermit"
 	icon_dead = "locker_hermit_dead" //apparently they didn't have a dead icon by default
