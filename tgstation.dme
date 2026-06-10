@@ -9884,4 +9884,5 @@
 #include "modular_nova\modules\xenoarchartifacts\obj\geosample.dm"
 #include "modular_nova\modules\xenoarchartifacts\obj\particle_battery.dm"
 #include "modular_nova\modules\xenoarchartifacts\obj\wave_scanner.dm"
+#include "modular_robust\code\modules\species\shadowpeople.dm"
 // END_INCLUDE
