@@ -7,7 +7,7 @@
 	desc = "The tape with some signs of date. Probably used by some aspiring wave listener."
 
 	used_capacity = 240
-	storedinfo = list(
+	storedinfo = alist(
 		1 = "<span class='game say'><span class='name'>The universal recorder</span> <span class='message'>says, \"<span class='tape_recorder '>Recording started.</span>\"</span></span>",
 		2 = "<span class='game say'><span class='name'>EAS Announcer</span> <span class='message'>blares, \"<span class=' '>The following message is transmitted at the request of local authorities.</span>\"</span></span>",
 		3 = "<span class='game say'><span class='name'>EAS Announcer</span> <span class='message'>states, \"<span class=' '>At 9:47 AM, Mountain Time, a disaster of unknown type has occurred at the Black Mesa Research Facility causing significant damage and failure to various power and communication systems in the surrounding areas.</span>\"</span></span>",
@@ -21,7 +21,7 @@
 		11 = "<span class='game say'><span class='name'>EAS Announcer</span> <span class='message'>announces, \"<span class=' '>Stay tuned to local news media outlets for further details and information on this situation.</span>\"</span></span>",
 		12 = "<span class='game say'><span class='name'>The universal recorder</span> <span class='message'>says, \"<span class='tape_recorder '>Recording stopped.</span>\"</span></span>",
 	)
-	timestamp = list(
+	timestamp = alist(
 		1 = 0,
 		2 = 20,
 		3 = 40,
@@ -41,7 +41,7 @@
 	desc = "The tape with some markings of blood. Probably used by some (now deceased) radio enthusiast."
 
 	used_capacity = 240
-	storedinfo = list(
+	storedinfo = alist(
 		1 = "<span class='game say'><span class='name'>The universal recorder</span> <span class='message'>says, \"<span class='tape_recorder '>Recording started.</span>\"</span></span>",
 		2 = "<span class='game say'><span class='name'>EAS Announcer</span> <span class='message'>blares, \"<span class=' '>The following message is transmitted at the request of the New Mexico Department of Emergency Services.</span>\"</span></span>",
 		3 = "<span class='game say'><span class='name'>EAS Announcer</span> <span class='message'>states, \"<span class=' '>At 9:47 AM, Mountain Standard Time, a disaster of unknown type has occurred at the Black Mesa Research Facility causing significant damage and failure to various power and communication systems in the surrounding areas.</span>\"</span></span>",
@@ -55,7 +55,7 @@
 		11 = "<span class='game say'><span class='name'>EAS Announcer</span> <span class='message'>echoes, \"<span class=' '>Stay tuned to local media outlets for further information on this ongoing emergency.</span>\"</span></span>",
 		12 = "<span class='game say'><span class='name'>The universal recorder</span> <span class='message'>says, \"<span class='tape_recorder '>Recording stopped.</span>\"</span></span>",
 	)
-	timestamp = list(
+	timestamp = alist(
 		1 = 0,
 		2 = 20,
 		3 = 40,
@@ -75,7 +75,7 @@
 	desc = "The tape with some... weird vines faintly growing through. Probably used by some alien."
 
 	used_capacity = 260
-	storedinfo = list(
+	storedinfo = alist(
 		1 = "<span class='game say'><span class='name'>The universal recorder</span> <span class='message'>says, \"<span class='tape_recorder '>Recording started.</span>\"</span></span>",
 		2 = "<span class='game say'><span class='name'>EAS Announcer</span> <span class='message'>blares, \"<span class=' '>The following message is transmitted at the request of the United Stated Department of Defense. This is not a test.</span>\"</span></span>",
 		3 = "<span class='game say'><span class='name'>EAS Announcer</span> <span class='message'>states, \"<span class=' '>Today, at 4:16 PM Mountain Time, a state of emergency was declared by the President of the United States.</span>\"</span></span>",
@@ -90,7 +90,7 @@
 		12 = "<span class='game say'><span class='name'>EAS Announcer</span> <span class='message'>clarifies, \"<span class=' '>Stay tuned to frequency 740 AM for further updates on this emergency.</span>\"</span></span>",
 		13 = "<span class='game say'><span class='name'>The universal recorder</span> <span class='message'>says, \"<span class='tape_recorder '>Recording stopped.</span>\"</span></span>",
 	)
-	timestamp = list(
+	timestamp = alist(
 		1 = 0,
 		2 = 20,
 		3 = 40,
@@ -111,7 +111,7 @@
 	desc = "Freshly-recorded tape, it isn't even signed."
 
 	used_capacity = 100
-	storedinfo = list(
+	storedinfo = alist(
 		1 = "<span class='game say'><span class='name'>The universal recorder</span> <span class='message'>says, \"<span class='tape_recorder '>Recording started.</span>\"</span></span>",
 		2 = "<span class='game say'><span class='name'>High Command</span> <span class='message'>blares, \"<span class=' '>Come in officer, do you copy? Officer, do you read me?</span>\"</span></span>",
 		3 = "<span class='game say'><span class='name'>High Command</span> <span class='message'>states, \"<span class=' '>Forget about Freeman! We're abandoning the base!</span>\"</span></span>",
@@ -119,7 +119,7 @@
 		5 = "<span class='game say'><span class='name'>High Command</span> <span class='message'>clarifies, \"<span class=' '>Repeat, if you weren't already evacuated, then you are on your own!</span>\"</span></span>",
 		6 = "<span class='game say'><span class='name'>The universal recorder</span> <span class='message'>says, \"<span class='tape_recorder '>Recording stopped.</span>\"</span></span>",
 	)
-	timestamp = list(
+	timestamp = alist(
 		1 = 0,
 		2 = 20,
 		3 = 40,
@@ -133,7 +133,7 @@
 	desc = "Relatively freshly-recorded taped, signed as \"radio transmission number XX XX.XX.200X\". Date and serial numbers have been scratched beyond recognition. How convenient."
 
 	used_capacity = 140
-	storedinfo = list(
+	storedinfo = alist(
 		1 = "<span class='game say'><span class='name'>The universal recorder</span> <span class='message'>says, \"<span class='tape_recorder '>Recording started.</span>\"</span></span>",
 		2 = "<span class='game say'><span class='name'>Echo-5 Bravo</span> <span class='message'>blares, \"<span class=' '>Any station, any station, this is Echo-5 Bravo! Are there any ground assets able to provide support in Sector 8?</span>\"</span></span>",
 		3 = "<span class='game say'><span class='name'>Echo-5 Bravo</span> <span class='message'>states, \"<span class=' '>Any station, any station, this is Echo-5 Bravo! Are there any ground assets able to provide support in Sector 8? Is anyone reading this?</span>\"</span></span>",
@@ -142,7 +142,7 @@
 		6 = "<span class='game say'><span class='name'>Echo-5 Yankee</span> <span class='message'>clarifies, \"<span class=' '>Push out the the nearest LZ and await further instructions!</span>\"</span></span>",
 		7 = "<span class='game say'><span class='name'>The universal recorder</span> <span class='message'>says, \"<span class='tape_recorder '>Recording stopped.</span>\"</span></span>",
 	)
-	timestamp = list(
+	timestamp = alist(
 		1 = 0,
 		2 = 20,
 		3 = 40,
@@ -157,7 +157,7 @@
 	desc = "Blood-covered tape. That's pretty much it."
 
 	used_capacity = 120
-	storedinfo = list(
+	storedinfo = alist(
 		1 = "<span class='game say'><span class='name'>The universal recorder</span> <span class='message'>says, \"<span class='tape_recorder '>Recording started.</span>\"</span></span>",
 		2 = "<span class='game say'><span class='name'>Echo-3 Juliet</span> <span class='message'>blares, \"<span class=' '>Any station, any station, this is Echo-3 Juliet... My team ambushed... I am unjred... I'm losing a lot of blood here. Left leg.</span>\"</span></span>",
 		3 = "<span class='game say'><span class='name'>Echo-5 Romeo</span> <span class='message'>states, \"<span class=' '>Echo-3 Juliet, this is Echo-5 Romeo. I need you to tie a tourniquet at hand's length above the wound. Get one of your IFAK now.</span>\"</span></span>",
@@ -168,7 +168,7 @@
 		8 = "<span class='game say'><span class='name'>Echo-5 Romeo</span> <span class='message'>clarifies, \"<span class=' '>Are you still there? Echo-3 Juliet, can you hear me?</span>\"</span></span>",
 		9 = "<span class='game say'><span class='name'>The universal recorder</span> <span class='message'>says, \"<span class='tape_recorder '>Recording stopped.</span>\"</span></span>",
 	)
-	timestamp = list(
+	timestamp = alist(
 		1 = 0,
 		2 = 10,
 		3 = 30,

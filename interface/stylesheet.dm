@@ -1,3 +1,4 @@
+dm
 /// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 /// !!!!!!!!!!HEY LISTEN!!!!!!!!!!!!!!!!!!!!!!!!
 /// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -19,27 +20,27 @@ em						{font-style: normal;	font-weight: bold;}
 .motd a, .motd a:link, .motd a:visited, .motd a:active, .motd a:hover
 	{color: #638500;}
 
-.italics				{					font-style: italic;}
+.italics				{font-style: italic;}
+.bold					{font-weight: bold;}
 
-.bold					{					font-weight: bold;}
-
-.prefix					{					font-weight: bold;}
+.prefix					{font-weight: bold;}
 .oocplain				{}
 .warningplain			{}
-.ooc					{					font-weight: bold;}
+.ooc					{font-weight: bold;}
 .adminobserverooc		{color: #0099cc;	font-weight: bold;}
 .adminooc				{color: #700038;	font-weight: bold;}
 
-.adminsay				{color:	#FF4500;	font-weight: bold;}
+.adminsay				{color: #FF4500;	font-weight: bold;}
 .admin					{color: #386aff;	font-weight: bold;}
 
-.name					{					font-weight: bold;}
+.name					{font-weight: bold;}
 
 .say					{}
 .deadsay				{color: #5c00e6;}
 .binarysay				{color: #20c20e;	background-color: #000000;	display: block;}
 .binarysay a			{color: #00ff00;}
 .binarysay a:active, .binarysay a:visited {color: #88ff88;}
+
 .syndradio				{color: #6d3f40;}
 .centcomradio			{color: #686868;}
 .aiprivradio			{color: #ff00ff;}
@@ -49,7 +50,7 @@ em						{font-style: normal;	font-weight: bold;}
 .yellowteamradio		{color: #d1ba22;}
 .captaincast			{color: #00ff99;}
 
-.yell					{					font-weight: bold;}
+.yell					{font-weight: bold;}
 
 .alert					{color: #ff0000;}
 h1.alert, h2.alert		{color: #000000;}
@@ -67,7 +68,7 @@ h1.alert, h2.alert		{color: #000000;}
 .boldwarning			{color: #ff0000;	font-style: italic;	font-weight: bold}
 .announce				{color: #228b22;	font-weight: bold;}
 .boldannounce			{color: #ff0000;	font-weight: bold;}
-.minorannounce			{					font-weight: bold;  font-size: 3;}
+.minorannounce			{font-weight: bold; font-size: 3;}
 .greenannounce			{color: #00ff00;	font-weight: bold;}
 .rose					{color: #ff5050;}
 .info					{color: #0000CC;}
@@ -122,9 +123,9 @@ h1.alert, h2.alert		{color: #000000;}
 
 .blob					{color: #556B2F;	font-weight: bold;	font-size: 3;}
 
-.sans					{font-family: "Comic Sans MS", cursive, sans-serif;}
-.papyrus				{font-family: "Papyrus", cursive, sans-serif;}
-.robot					{font-family: "Courier New", cursive, sans-serif;}
+.sans					{font-family: 'Comic Sans MS', cursive, sans-serif;}
+.papyrus				{font-family: 'Papyrus', cursive, sans-serif;}
+.robot					{font-family: 'Courier New', cursive, sans-serif;}
 
 .command_headset		{font-weight: bold;	font-size: 3;}
 .soapbox 				{font-weight: bold; font-size: 3;}
@@ -132,143 +133,9 @@ h1.alert, h2.alert		{color: #000000;}
 .big					{font-size: 3;}
 .reallybig				{font-size: 4;}
 .extremelybig			{font-size: 5;}
-.greentext				{color: #00FF00;	font-size: 3;}
-.redtext				{color: #FF0000;	font-size: 3;}
-.clown					{color: #FF69Bf;	font-size: 3;	font-family: "Comic Sans MS", cursive, sans-serif;	font-weight: bold;}
-.singing				{font-family: "Trebuchet MS", cursive, sans-serif; font-style: italic;}
-.his_grace				{color: #15D512;	font-family: "Courier New", cursive, sans-serif;	font-style: italic;}
-.hypnophrase			{color: #3bb5d3;	font-weight: bold;	animation: hypnocolor 1500ms infinite; animation-direction: alternate;}
-	@keyframes hypnocolor {
-		0%		{color: #0d0d0d;}
-		25%		{color: #410194;}
-		50%		{color: #7f17d8;}
-		75%		{color: #410194;}
-		100%	{color: #3bb5d3;}
+
+.upside_down {
+	display: inline;
+	transform: scale(-1, -1);
 }
-// NOVA EDIT ADDITION BEGIN
-
-.velvet					{color: #660015; 	font-weight: bold; animation: velvet 5000ms infinite;}
-	@keyframes velvet {
-		0% 		{color: #400020; }
-		40% 	{color: #FF0000; }
-		50% 	{color: #FF8888; }
-		60% 	{color: #FF0000; }
-		100% 	{color: #400020; }
-}
-
-.hexnut 				{color: #0099ff;	font-weight: bold;	animation: hexnut 5000ms infinite;	animation-direction: alternate;}
-	@keyframes hexnut {
-		0% 	{color: #0099ff;}
-		35% 	{color: #a64dff;}
-		50% 	{color: #00997a;}
-		60% 	{color: #ffb31a;}
-		100% 	{color: #ff33cc;}
-}
-
-.glossy					{color: #9b6000; font-weight: bold; animation: glossy 5000ms infinite;}
-	@keyframes glossy {
-		0% 		{color: #9b6000}
-		30% 	{color: #c88800}
-		40% 	{color: #bdbd00}
-		50% 	{color: #c88800}
-		100% 	{color: #9b6000}
-}
-
-.doyourjobidiot {
-  color: #c51e1e;
-  text-shadow: 0 0 4px #e22525;
-  font-size: 125%;
-  font-weight: bold;
-  animation: flashingfuckingwarning 250ms infinite;
-}
-
-@keyframes flashingfuckingwarning {
-  0% {
-    color: #c51e1e;
-    text-shadow: 0 0 4px #c51e1e;
-  }
-
-  50% {
-    color: #e22525;
-    text-shadow: 0 0 8px #e22525;
-  }
-
-  100% {
-    color: #c51e1e;
-    text-shadow: 0 0 4px #c51e1e;
-  }
-}
-
-
-.brass {
-	color: #BE8700;
-}
-
-.big_brass {
-	color: #BE8700;
-	font-size: 3;
-	font-weight: bold;
-	font-style: italic;
-}
-
-.clockyellow {
-	color: #DAAA18;
-	font-weight: bold;
-	font-style: italic;
-}
-
-.clockgray {
-	color: #42474D;
-	font-weight: bold;
-	font-style: italic;
-}
-
-.clockred {
-	color: #6E001A;
-	font-weight: bold;
-	font-style: italic;
-}
-
-.brown {
-	color: #3d2009;
-}
-
-.orange {
-	color: #b8761a;
-}
-
-.yellow {
-	color: #c7b72c;
-}
-
-.cyan {
-	color: #0ea1e6;
-}
-
-.horizonblue {
-	color: #7ca2b8;
-}
-
-// NOVA EDIT ADDITION END
-
-.phobia			{color: #dd0000;	font-weight: bold;	animation: phobia 750ms infinite;}
-	@keyframes phobia {
-		0%		{color: #0d0d0d;}
-		50%		{color: #dd0000;}
-		100%	{color: #0d0d0d;}
-}
-
-.icon					{height: 1em;	width: auto;}
-
-.memo					{color: #638500;	text-align: center;}
-.memoedit				{text-align: center;	font-size: 2;}
-.abductor				{color: #800080;	font-style: italic;}
-.mind_control			{color: #A00D6F;	font-size: 3;	font-weight: bold;	font-style: italic;}
-.slime					{color: #00CED1;}
-.drone					{color: #ffff00;	background-color: #7c2395;	font-style: italic;}
-.monkey					{color: #975032;}
-.swarmer				{color: #2C75FF;}
-.resonate				{color: #298F85;}
-
-.upside_down			{display: inline; -moz-transform: scale(-1, -1); -webkit-transform: scale(-1, -1); -o-transform: scale(-1, -1); -ms-transform: scale(-1, -1); transform: scale(-1, -1);}
 </style>"}
