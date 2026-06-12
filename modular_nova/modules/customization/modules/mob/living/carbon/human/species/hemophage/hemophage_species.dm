@@ -5,6 +5,7 @@
 	name = "Hemophage"
 	id = SPECIES_HEMOPHAGE
 	// IRIS EDIT: Hemophages now use mutant color instead of skin tone
+	// ROBUST EDIT: all hemophages spawn as masquerade
 	inherent_traits = list(
 		TRAIT_ADVANCEDTOOLUSER,
 		TRAIT_CAN_STRIP,
@@ -15,7 +16,9 @@
 		TRAIT_LITERATE,
 		TRAIT_DRINKS_BLOOD,
 		TRAIT_MUTANT_COLORS,
+		TRAIT_MASQUERADE_FOOD
 	)
+	// ROBUST EDIT END
 	inherent_biotypes = MOB_HUMANOID | MOB_ORGANIC
 	exotic_bloodtype = BLOOD_TYPE_UNIVERSAL
 	mutantheart = /obj/item/organ/heart/hemophage
