@@ -40,7 +40,7 @@
 		if(SPT_PROB(ismonkey(living_pawn) ? 25 : 10, seconds_per_tick))
 			controller.queue_behavior(/datum/ai_behavior/battle_screech/monkey)
 */
-		controller.queue_behavior(/datum/ai_behavior/monkey_attack_mob, BB_MONKEY_CURRENT_ATTACK_TARGET)
+		controller.queue_behavior(/datum/ai_behavior/human_attack_mob, BB_MONKEY_CURRENT_ATTACK_TARGET)
 		return SUBTREE_RETURN_FINISH_PLANNING
 
 	//by this point we have a target but they're down, let's try dumpstering this loser
@@ -48,13 +48,16 @@
 	living_pawn.set_combat_mode(FALSE)
 // finding where to put the corpse
 	if(!controller.blackboard[BB_MONKEY_TARGET_DISPOSAL]) //if we don't have a targeted place for disposal
+// for some reason the code isn't sure that the controller is human one and not the monkey one, so i need to add another check for it
+//		if (!istype(controller, /datum/ai_controller/monkey/human))
+//			return
+//		var/datum/ai_controller/monkey/human/controller_human = controller
 //if we're trying to hide bodies in plain sight, put them in a nearby locker
-		if(controller.blackboard[BB_HUMAN_HIDE_BODIES == TRUE])
+		if(controller.blackboard[BB_HUMAN_HIDE_BODIES])
 			controller.queue_behavior(/datum/ai_behavior/find_and_set, BB_MONKEY_TARGET_DISPOSAL, /obj/structure/closet, MONKEY_ENEMY_VISION)
 		else
 //otherwise, put them specifically in a body bag
 			controller.queue_behavior(/datum/ai_behavior/find_and_set, BB_MONKEY_TARGET_DISPOSAL, /obj/structure/closet/body_bag, MONKEY_ENEMY_VISION)
-
 		return
 
 	controller.queue_behavior(/datum/ai_behavior/human_disposal_mob, BB_MONKEY_CURRENT_ATTACK_TARGET, BB_MONKEY_TARGET_DISPOSAL)

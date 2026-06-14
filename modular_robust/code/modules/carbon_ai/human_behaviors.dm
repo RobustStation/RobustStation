@@ -1,17 +1,106 @@
 
 
 // might make /datum/ai_behavior/monkey_equip make human NPCs equip only the loot they spawned with but lost somehow
-// or make them look for the same loot
+// or make them look for the same type of loot
 
 //might use pickpocketing code to make them stop moving when healing someone/themselves
 
 // /datum/ai_behavior/monkey_flee can be probably left as is
 // same with monkey_attack_mob, although i might need to add gun reloading later
 
+// =-=-=-=-=-=-=-=-= Attack shit
+
+/datum/ai_behavior/human_attack_mob
+	behavior_flags = AI_BEHAVIOR_REQUIRE_MOVEMENT | AI_BEHAVIOR_MOVE_AND_PERFORM | AI_BEHAVIOR_CAN_PLAN_DURING_EXECUTION //performs to increase frustration
+
+/datum/ai_behavior/human_attack_mob/setup(datum/ai_controller/controller, target_key)
+	. = ..()
+	set_movement_target(controller, controller.blackboard[target_key])
+
+/datum/ai_behavior/human_attack_mob/perform(seconds_per_tick, datum/ai_controller/controller, target_key)
+	var/mob/living/target = controller.blackboard[target_key]
+	var/mob/living/living_pawn = controller.pawn
+	var/datum/targeting_strategy/strategy = GET_TARGETING_STRATEGY(controller.blackboard[BB_TARGETING_STRATEGY])
+
+	if(QDELETED(target) || !strategy.can_attack(living_pawn, target)) //Target == owned
+		return AI_BEHAVIOR_DELAY | AI_BEHAVIOR_SUCCEEDED
+
+	// check if target has a weapon
+	var/holding_weapon = FALSE
+	for(var/obj/item/potential_weapon in target.held_items)
+		if(!(potential_weapon.item_flags & ABSTRACT))
+			holding_weapon = TRUE
+			break
+
+	var/attack_results = monkey_attack(controller, target, seconds_per_tick, holding_weapon && SPT_PROB(MONKEY_ATTACK_DISARM_PROB, seconds_per_tick), holding_weapon)
+
+	if(!attack_results || controller.blackboard[BB_MONKEY_AGGRESSIVE])
+		return AI_BEHAVIOR_DELAY
+
+	//check if we can de-aggro on the enemy...
+	var/hatred_value = controller.blackboard[BB_MONKEY_ENEMIES][target]
+
+	if(isnull(hatred_value))
+		hatred_value = 1
+		controller.set_blackboard_key_assoc(BB_MONKEY_ENEMIES, target, hatred_value)
+
+	if(!SPT_PROB(MONKEY_HATRED_REDUCTION_PROB, seconds_per_tick))
+		return AI_BEHAVIOR_DELAY
+
+	//we decrease our hatred value to them by 1
+	hatred_value--
+	if(hatred_value <= 0)
+		controller.remove_thing_from_blackboard_key(BB_MONKEY_ENEMIES, target)
+		return AI_BEHAVIOR_DELAY | AI_BEHAVIOR_SUCCEEDED
+
+	controller.set_blackboard_key_assoc(BB_MONKEY_ENEMIES, target, hatred_value)
+	return AI_BEHAVIOR_DELAY
+
+/datum/ai_behavior/human_attack_mob/finish_action(datum/ai_controller/controller, succeeded, target_key)
+	. = ..()
+	controller.clear_blackboard_key(target_key)
+
+/// attack using a held weapon otherwise bite the enemy, then if we are angry there is a chance we might calm down a little
+/datum/ai_behavior/human_attack_mob/proc/monkey_attack(datum/ai_controller/controller, mob/living/target, seconds_per_tick, disarm, holding_weapon)
+	var/mob/living/living_pawn = controller.pawn
+
+	if(living_pawn.next_move > world.time)
+		return FALSE
+
+	//are we holding a gun? can we shoot it? if so, FIRE
+	var/obj/item/gun/gun_to_shoot = locate() in living_pawn.held_items
+// human AI addition: toggling safeties
+	if (gun_to_shoot != null)
+		var/datum/component/gun_safety/safety_comp = gun_to_shoot.GetComponent(/datum/component/gun_safety)
+		if (safety_comp != null && safety_comp.safety_currently_on && safety_comp.toggle_safety_action != null)// CONTINUE LATER !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// try turning safety off
+			var/datum/action/item_action/gun_safety_toggle/safety_action = safety_comp.toggle_safety_action
+			safety_action.Trigger(living_pawn)
+// human addition end
+	if(gun_to_shoot?.can_shoot())
+		if(gun_to_shoot != living_pawn.get_active_held_item())
+			living_pawn.swap_hand(living_pawn.get_inactive_hand_index())
+		controller.ai_interact(target = target, combat_mode = TRUE)
+		return TRUE
+
+	//look for any potential weapons we're holding
+	var/obj/item/potential_weapon = locate() in living_pawn.held_items
+	if(!target.IsReachableBy(living_pawn, potential_weapon?.reach))
+		return FALSE
+
+	if(isnull(potential_weapon))
+		controller.ai_interact(target = target, modifiers = disarm ? list(RIGHT_CLICK = TRUE) : null, combat_mode = TRUE)
+		if(disarm && !isnull(holding_weapon) && controller.blackboard[BB_MONKEY_BLACKLISTITEMS][holding_weapon])
+			controller.remove_thing_from_blackboard_key(BB_MONKEY_BLACKLISTITEMS, holding_weapon) //lets try to pickpocket it again!
+		return TRUE
+
+	if(potential_weapon != living_pawn.get_active_held_item())
+		living_pawn.swap_hand(living_pawn.get_inactive_hand_index())
+	controller.ai_interact(target = target, combat_mode = TRUE)
+	return TRUE
 
 
-// /obj/structure/closet/body_bag
-// BB_HUMAN_HIDE_BODIES = TRUE
+// =-=-=-=-=-=-=-=-= Hide bodies
 
 /datum/ai_behavior/human_disposal_mob
 	behavior_flags = AI_BEHAVIOR_REQUIRE_MOVEMENT | AI_BEHAVIOR_MOVE_AND_PERFORM //performs to increase frustration
@@ -86,8 +175,8 @@
 
 
 
-//!!!!!!!!!!!!!!!!!
-// /datum/ai_behavior/monkey_set_combat_target/perform
+// =-=-=-=-=-=-=-=-= Set combat target
+
 /datum/ai_behavior/human_set_combat_target/perform(seconds_per_tick, datum/ai_controller/controller, set_key, enemies_key)
 	var/list/enemies = controller.blackboard[enemies_key]
 	var/list/valids = list()
